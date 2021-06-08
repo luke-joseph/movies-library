@@ -1871,7 +1871,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      moviesToShow: 8
+      moviesToShow: 8,
+      genres: genres
     };
   },
   computed: {
@@ -1903,12 +1904,52 @@ var app = new Vue({
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _data_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/genres.js */ "./resources/js/data/genres.js");
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
+
+window.genres = _data_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres;
+
+/***/ }),
+
+/***/ "./resources/js/data/genres.js":
+/*!*************************************!*\
+  !*** ./resources/js/data/genres.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "genres": () => (/* binding */ genres)
+/* harmony export */ });
+var genres = {
+  28: "Action",
+  12: "Adventure",
+  16: "Animation",
+  35: "Comedy",
+  80: "Crime",
+  99: "Documentary",
+  18: "Drama",
+  10751: "Family",
+  14: "Fantasy",
+  36: "History",
+  27: "Horror",
+  10402: "Music",
+  9648: "Mystery",
+  10749: "Romance",
+  878: "Science Fiction",
+  10770: "TV Movie",
+  53: "Thriller",
+  10752: "War",
+  37: "Western"
+};
 
 /***/ }),
 
@@ -19449,12 +19490,23 @@ var render = function() {
                 {
                   staticClass: "mt-1 tracking-wide font-semibold text-gray-300"
                 },
-                [_vm._v("87% | 08/06/2021")]
+                [
+                  _vm._v(
+                    _vm._s(movie.vote_average * 10 + "%") +
+                      " | " +
+                      _vm._s(movie.release_date)
+                  )
+                ]
               ),
               _vm._v(" "),
-              _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                _vm._v("Action, Thriller")
-              ])
+              _c(
+                "p",
+                { staticClass: "text-sm mt-1 text-gray-400" },
+                _vm._l(movie.genre_ids, function(genre) {
+                  return _c("span", [_vm._v(_vm._s(_vm.genres[genre]) + ", ")])
+                }),
+                0
+              )
             ])
           : _vm._e()
       }),

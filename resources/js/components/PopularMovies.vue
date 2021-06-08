@@ -7,8 +7,8 @@
       <div v-for="(movie, index) in popularMovies.results" v-if="index < moviesToShow" class="">
         <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt="">
         <h3 class="text-3xl mt-2 tracking-wider">{{ movie.original_title }}</h3>
-        <p class="mt-1 tracking-wide font-semibold text-gray-300">87% | 08/06/2021</p>
-        <p class="text-sm mt-1 text-gray-400">Action, Thriller</p>
+        <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
+        <p class="text-sm mt-1 text-gray-400"><span v-for="genre in movie.genre_ids">{{ genres[genre] }}, </span></p>
       </div>
 
     </div>
@@ -25,7 +25,8 @@ export default {
   },
   data(){
     return{
-      moviesToShow: 8
+      moviesToShow: 8,
+      genres: genres
     }
   },
   computed:{
