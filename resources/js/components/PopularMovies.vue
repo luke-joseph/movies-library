@@ -4,7 +4,7 @@
 
     <div class="movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16">
 
-      <div v-for="(movie, index) in popularMovies.results" v-if="index < moviesToShow" class="">
+      <div v-for="(movie, index) in movies" class="">
         <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt="">
         <h3 class="text-3xl mt-2 tracking-wider">{{ movie.original_title }}</h3>
         <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { genres } from '../data/movie-genres.js';
+
 export default {
   props:{
     popularMovies:{
@@ -25,13 +27,14 @@ export default {
   },
   data(){
     return{
-      moviesToShow: 8,
+      amountToShow: 8,
       genres: genres
     }
   },
   computed:{
     movies: function(){
       let movies = this.popularMovies.results;
+      movies.length = this.amountToShow;
       return movies;
     }
   }

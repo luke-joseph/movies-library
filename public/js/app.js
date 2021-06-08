@@ -1845,6 +1845,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/movie-genres.js */ "./resources/js/data/movie-genres.js");
 //
 //
 //
@@ -1862,6 +1863,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     popularMovies: {
@@ -1871,13 +1873,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      moviesToShow: 8,
-      genres: genres
+      amountToShow: 8,
+      genres: _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres
     };
   },
   computed: {
     movies: function movies() {
       var movies = this.popularMovies.results;
+      movies.length = this.amountToShow;
       return movies;
     }
   }
@@ -1904,24 +1907,19 @@ var app = new Vue({
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _data_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/genres.js */ "./resources/js/data/genres.js");
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
-window.genres = _data_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres;
-
 /***/ }),
 
-/***/ "./resources/js/data/genres.js":
-/*!*************************************!*\
-  !*** ./resources/js/data/genres.js ***!
-  \*************************************/
+/***/ "./resources/js/data/movie-genres.js":
+/*!*******************************************!*\
+  !*** ./resources/js/data/movie-genres.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19471,44 +19469,40 @@ var render = function() {
         staticClass:
           "movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16"
       },
-      _vm._l(_vm.popularMovies.results, function(movie, index) {
-        return index < _vm.moviesToShow
-          ? _c("div", {}, [
-              _c("img", {
-                attrs: {
-                  src: "https://image.tmdb.org/t/p/w342/" + movie.poster_path,
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("h3", { staticClass: "text-3xl mt-2 tracking-wider" }, [
-                _vm._v(_vm._s(movie.original_title))
-              ]),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "mt-1 tracking-wide font-semibold text-gray-300"
-                },
-                [
-                  _vm._v(
-                    _vm._s(movie.vote_average * 10 + "%") +
-                      " | " +
-                      _vm._s(movie.release_date)
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "text-sm mt-1 text-gray-400" },
-                _vm._l(movie.genre_ids, function(genre) {
-                  return _c("span", [_vm._v(_vm._s(_vm.genres[genre]) + ", ")])
-                }),
-                0
+      _vm._l(_vm.movies, function(movie, index) {
+        return _c("div", {}, [
+          _c("img", {
+            attrs: {
+              src: "https://image.tmdb.org/t/p/w342/" + movie.poster_path,
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("h3", { staticClass: "text-3xl mt-2 tracking-wider" }, [
+            _vm._v(_vm._s(movie.original_title))
+          ]),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "mt-1 tracking-wide font-semibold text-gray-300" },
+            [
+              _vm._v(
+                _vm._s(movie.vote_average * 10 + "%") +
+                  " | " +
+                  _vm._s(movie.release_date)
               )
-            ])
-          : _vm._e()
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-sm mt-1 text-gray-400" },
+            _vm._l(movie.genre_ids, function(genre) {
+              return _c("span", [_vm._v(_vm._s(_vm.genres[genre]) + ", ")])
+            }),
+            0
+          )
+        ])
       }),
       0
     )
