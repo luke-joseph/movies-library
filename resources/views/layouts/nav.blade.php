@@ -1,10 +1,10 @@
 <nav class="h-16 w-full bg-gray-900">
   <div class="nav-items flex container mx-auto h-full justify-between">
-    <div class="flex items-center w-1/2 text-lg grid grid-flow-col grid-cols-4 gap-4">
-      <a href="#" class="text-white">MoviesDB </a>
-      <a href="#" class="text-white">Popular </a>
-      <a href="#" class="text-white">New Releases </a>
-      <a href="#" class="text-white">Highest Rating </a>
+    <div class="flex items-center w-1/3 text-lg">
+      <a href="/" class="text-white">MoviesDB </a>
+      <a href="/" class="text-white ml-10">Movies</a>
+      <a href="#" class="text-white ml-6">TV shows</a>
+      <a href="#" class="text-white ml-6">Actors</a>
     </div>
     <div class="w-1/3">
       <div id="search" class="flex flex-col sm:flex-row sm:flex-wrap items-center w-full mx-auto rounded p-4 justify-between">

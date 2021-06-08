@@ -1,15 +1,16 @@
 @include('layouts.head')
-    <body class="border-t-4 border-indigo-600 bg-gray-800 text-gray-300">
+    <body class="flex flex-col bg-gray-800 text-gray-300 min-h-screen">
 
       @include('layouts.nav')
 
-      <div class="container mx-auto mt-16 mb-16">
+      <div class="container mx-auto mt-10 mb-16">
 
         @yield('content')
 
       </div>
 
-      <div class="h-16 bg-black">
+{{-- footer --}}
+      <div class="h-16 bg-black mt-auto">
 
       </div>
     </body>
