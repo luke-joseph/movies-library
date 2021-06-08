@@ -10,8 +10,10 @@
       </div>
 
 {{-- footer --}}
-      <div class="h-16 bg-black mt-auto">
-
+      <div class="flex h-16 bg-black mt-auto">
+        <div class="my-auto container mx-auto">
+          <p class="">Made with love in Berlin</p>
+        </div>
       </div>
     </body>
 </html>
