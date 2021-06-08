@@ -14,5 +14,5 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>

@@ -3,6 +3,10 @@
 @section('content')
   {{-- popular movies --}}
 
+  <div id="app">
+    <example-component></example-component>
+  </div>
+
   <div class="mt-16">
     <h2 class="text-3xl font-bold text-indigo-300">// Popular Movies</h2>
 

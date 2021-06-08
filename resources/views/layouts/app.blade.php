@@ -9,11 +9,12 @@
 
       </div>
 
-{{-- footer --}}
+      {{-- footer --}}
       <div class="flex h-16 bg-black mt-auto">
         <div class="my-auto container mx-auto">
           <p class="">Made with love in Berlin</p>
         </div>
       </div>
+      <script src="{{ mix('/js/app.js')}}"></script>
     </body>
 </html>
