@@ -12,7 +12,7 @@
           <p class="mt-4 tracking-wide font-semibold text-gray-300 text-xl">
             {{ (movie.vote_average * 10) + '%' }}
             |
-            <span>FIX ME - GENRES</span>
+            <span>{{ movie.genres }}</span>
             | {{ movie.release_date }}
           </p>
 

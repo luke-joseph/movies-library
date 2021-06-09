@@ -1930,7 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     topRatedMovies: {
-      type: Object,
+      type: Array,
       required: true
     },
     upcomingMovies: {
@@ -2002,18 +2002,6 @@ __webpack_require__.r(__webpack_exports__);
     popularMovies: {
       type: Array,
       required: true
-    }
-  },
-  data: function data() {
-    return {
-      amountToShow: 8
-    };
-  },
-  computed: {
-    movies: function movies() {
-      var movies = this.popularMovies;
-      movies.length = this.amountToShow;
-      return movies;
     }
   }
 });
@@ -2106,7 +2094,7 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     },
     relatedMovies: {
-      type: Object,
+      type: Array,
       required: true
     }
   }
@@ -2175,11 +2163,6 @@ __webpack_require__.r(__webpack_exports__);
       type: Array,
       required: true
     }
-  },
-  data: function data() {
-    return {
-      genres: genres
-    };
   }
 });
 
@@ -20021,7 +20004,7 @@ var render = function() {
           _vm._v("// Today's Recommended Movies")
         ]),
         _vm._v(" "),
-        _vm._l(_vm.topRatedMovies.results, function(movie) {
+        _vm._l(_vm.topRatedMovies, function(movie) {
           return _c(
             "div",
             {
@@ -20052,7 +20035,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                  _vm._v("FIX ME - GENRES")
+                  _vm._v(_vm._s(movie.genres))
                 ]),
                 _vm._v(" "),
                 _c(
@@ -20092,12 +20075,12 @@ var render = function() {
             _vm._v("// Upcoming Movies")
           ]),
           _vm._v(" "),
-          _vm._l(_vm.upcomingMovies.results, function(movie) {
+          _vm._l(_vm.upcomingMovies, function(movie) {
             return _c("div", { staticClass: "mini-movie mt-6" }, [
               _c("div", { staticClass: "flex" }, [
-                _c("div", { staticClass: "w-16" }, [
+                _c("div", {}, [
                   _c("img", {
-                    staticClass: "hover:opacity-75 cursor-pointer",
+                    staticClass: "hover:opacity-75 cursor-pointer small-poster",
                     attrs: {
                       src:
                         "https://image.tmdb.org/t/p/w92/" + movie.poster_path,
@@ -20121,7 +20104,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                    _vm._v("GENRES FIX ME")
+                    _vm._v(_vm._s(movie.genres))
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
@@ -20187,7 +20170,7 @@ var render = function() {
         staticClass:
           "movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16"
       },
-      _vm._l(_vm.movies, function(movie) {
+      _vm._l(_vm.popularMovies, function(movie) {
         return _c("div", {}, [
           _c("a", { attrs: { href: "/show/" + movie.id } }, [
             _c("img", {
@@ -20277,7 +20260,7 @@ var render = function() {
                 _vm._s(_vm.movie.vote_average * 10 + "%") +
                 "\r\n            |\r\n            "
             ),
-            _c("span", [_vm._v("FIX ME - GENRES")]),
+            _c("span", [_vm._v(_vm._s(_vm.movie.genres))]),
             _vm._v(
               "\r\n            | " +
                 _vm._s(_vm.movie.release_date) +
@@ -20343,7 +20326,7 @@ var render = function() {
       _c("show-movie", { attrs: { movie: _vm.movie } }),
       _vm._v(" "),
       _c("show-movies-related", {
-        attrs: { "related-movies": _vm.relatedMovies.results }
+        attrs: { "related-movies": _vm.relatedMovies }
       })
     ],
     1
@@ -20376,17 +20359,19 @@ var render = function() {
     "div",
     { staticClass: "w-1/4 pl-10" },
     [
-      _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
-        _vm._v("// Related Movies")
-      ]),
+      _vm.relatedMovies.length
+        ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
+            _vm._v("// Related Movies")
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _vm._l(_vm.relatedMovies, function(movie) {
         return _c("div", { staticClass: "mini-movie mt-6" }, [
           _c("div", { staticClass: "flex" }, [
-            _c("div", { staticClass: "w-16" }, [
+            _c("div", {}, [
               _c("a", { attrs: { href: "/show/" + movie.id } }, [
                 _c("img", {
-                  staticClass: "hover:opacity-75",
+                  staticClass: "hover:opacity-75 small-poster",
                   attrs: {
                     src: "https://image.tmdb.org/t/p/w92/" + movie.poster_path,
                     alt: movie.original_title + " movie poster"
@@ -20405,7 +20390,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                _vm._v("FIX ME - GENRES")
+                _vm._v(_vm._s(movie.genres))
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [

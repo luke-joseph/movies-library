@@ -5,7 +5,7 @@
 
     <div class="movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16">
 
-      <div v-for="movie in movies" class="">
+      <div v-for="movie in popularMovies" class="">
 
           <a :href="'/show/' + movie.id">
 
@@ -39,18 +39,6 @@ export default {
     popularMovies:{
       type: Array,
       required: true
-    }
-  },
-  data(){
-    return{
-      amountToShow: 8
-    }
-  },
-  computed:{
-    movies: function(){
-      let movies = this.popularMovies;
-      movies.length = this.amountToShow;
-      return movies;
     }
   }
 }

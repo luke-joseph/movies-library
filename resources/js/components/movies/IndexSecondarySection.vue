@@ -6,7 +6,7 @@
 
       <h2 class="text-3xl font-bold text-indigo-300">// Today's Recommended Movies</h2>
 
-      <div v-for="movie in topRatedMovies.results" class="recommended-movie-container mt-8 flex bg-gray-900 p-6 rounded">
+      <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex bg-gray-900 p-6 rounded">
 
           <img @click="showMovie(movie.id)"
           :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path"
@@ -21,7 +21,7 @@
 
           </a>
 
-          <p class="text-sm mt-1 text-gray-400">FIX ME - GENRES</p>
+          <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
 
           <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | Released {{ movie.release_date }}</p>
 
@@ -45,15 +45,15 @@
       <div class="w-3/4 ml-auto h-full">
       <h2 class="text-3xl font-bold text-indigo-300 mb-8">// Upcoming Movies</h2>
   <!-- Mini movie -->
-      <div v-for="movie in upcomingMovies.results" class="mini-movie mt-6">
+      <div v-for="movie in upcomingMovies" class="mini-movie mt-6">
         <div class="flex">
 
-          <div class="w-16">
+          <div class="">
 
             <img @click="showMovie(movie.id)"
             :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
             :alt="movie.original_title + ' film poster'"
-            class="hover:opacity-75 cursor-pointer">
+            class="hover:opacity-75 cursor-pointer small-poster">
 
           </div>
 
@@ -65,7 +65,7 @@
 
             </a>
 
-            <p class="text-sm mt-1 text-gray-400">GENRES FIX ME</p>
+            <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
 
             <p class="mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
 
@@ -85,7 +85,7 @@
 export default {
   props:{
     topRatedMovies:{
-      type: Object,
+      type: Array,
       required: true
     },
     upcomingMovies:{

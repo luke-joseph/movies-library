@@ -5,7 +5,7 @@
     <show-movie :movie="movie" />
 
     <!-- Recommended -->
-    <show-movies-related :related-movies="relatedMovies.results" />
+    <show-movies-related :related-movies="relatedMovies" />
 
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
       required: true
     },
     relatedMovies:{
-      type: Object,
+      type: Array,
       required: true
     }
   }

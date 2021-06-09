@@ -27,13 +27,33 @@ class MoviesController extends Controller
             'genres' => GenreIdsToString::convert($movie['genre_ids'])
           ]);
 
-      });
+      })->take(8);
 
-      $topRatedMovies = Http::withToken(config('services.tmdb.key'))
+      $rawTopRatedMovies = Http::withToken(config('services.tmdb.key'))
       ->get(config('services.tmdb.api_url') . 'movie/top_rated');
 
-      $upcomingMovies = Http::withToken(config('services.tmdb.key'))
+      $topRatedMovies = collect($rawTopRatedMovies['results'])
+      ->map(function ($movie) {
+
+          return collect($movie)->merge([
+            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+            'genres' => GenreIdsToString::convert($movie['genre_ids'])
+          ]);
+
+      })->take(2);
+
+      $rawUpcomingMovies = Http::withToken(config('services.tmdb.key'))
       ->get(config('services.tmdb.api_url') . 'movie/upcoming');
+
+      $upcomingMovies = collect($rawUpcomingMovies['results'])
+      ->map(function ($movie) {
+
+          return collect($movie)->merge([
+            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+            'genres' => GenreIdsToString::convert($movie['genre_ids'])
+          ]);
+
+      })->take(6);
 
         return view('index', compact(
           'popularMovies',
@@ -51,15 +71,36 @@ class MoviesController extends Controller
      */
     public function show($movie)
     {
+
       $endpoint = config('services.tmdb.api_url') . "movie/$movie";
 
-      $movie = Http::withToken(config('services.tmdb.key'))
+      $movieRaw = Http::withToken(config('services.tmdb.key'))
       ->get($endpoint);
+
+      $singleMovie = collect(json_decode($movieRaw->getBody(), true));
+
+      $genresArray = array_map(function($genre){
+        return $genre['id'];
+      }, $singleMovie['genres']);
+
+      $movie = $singleMovie->merge([
+        'release_date' => Carbon::create($singleMovie['release_date'])->toFormattedDateString(),
+        'genres' => GenreIdsToString::convert($genresArray)
+      ]);
 
       $relatedMoviesEndpoint = $endpoint . "/similar";
 
-      $relatedMovies = Http::withToken(config('services.tmdb.key'))
+      $relatedMoviesRaw = Http::withToken(config('services.tmdb.key'))
       ->get($relatedMoviesEndpoint);
+
+      $relatedMovies = collect($relatedMoviesRaw['results'])
+      ->map(function ($movie) {
+
+          return collect($movie)->merge([
+            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString()
+          ]);
+
+      })->take(4);
 
       return view('show', compact('movie', 'relatedMovies'));
     }

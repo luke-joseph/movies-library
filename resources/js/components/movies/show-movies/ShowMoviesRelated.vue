@@ -2,7 +2,7 @@
 
     <div class="w-1/4 pl-10">
 
-      <h2 class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
+      <h2 v-if="relatedMovies.length" class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
 
       <!-- Mini movie -->
 
@@ -10,12 +10,12 @@
 
         <div class="flex">
 
-          <div class="w-16">
+          <div class="">
 
             <a :href="'/show/' + movie.id">
 
               <img :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
-              :alt="movie.original_title + ' movie poster'" class="hover:opacity-75">
+              :alt="movie.original_title + ' movie poster'" class="hover:opacity-75 small-poster">
 
             </a>
 
@@ -29,7 +29,7 @@
 
             </a>
 
-            <p class="text-sm mt-1 text-gray-400">FIX ME - GENRES</p>
+            <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
 
             <p class="mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
 
@@ -49,11 +49,6 @@ export default {
     relatedMovies:{
       type: Array,
       required: true
-    }
-  },
-  data(){
-    return{
-      genres: genres
     }
   }
 }
