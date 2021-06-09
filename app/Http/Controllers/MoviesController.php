@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class PagesController extends Controller
+class MoviesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the movies
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
@@ -25,12 +25,17 @@ class PagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int  $movie
+     * @return View
      */
-    public function show($id)
+    public function show($movie)
     {
-        //
+      $endpoint = config('services.tmdb.api_url') . "movie/$movie";
+
+      $movie = Http::withToken(config('services.tmdb.key'))
+      ->get($endpoint);
+
+      return view('show', compact('movie'));
     }
 
 }

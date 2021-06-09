@@ -7,8 +7,6 @@
     <popular-movies :popular-movies="{{ $popularMovies }}"></popular-movies>
   </div>
 
-
-
 {{-- second section --}}
 <div class="flex w-full mt-20 mb-64">
 

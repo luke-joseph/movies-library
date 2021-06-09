@@ -5,7 +5,9 @@
     <div class="movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16">
 
       <div v-for="(movie, index) in movies" class="">
-        <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt="">
+
+        <a :href="'/show/' + movie.id"><img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt=""></a>
+
         <h3 class="text-3xl mt-2 tracking-wider">{{ movie.original_title }}</h3>
         <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
         <p class="text-sm mt-1 text-gray-400"><span v-for="genre in movie.genre_ids">{{ genres[genre] }}, </span></p>
@@ -16,7 +18,7 @@
 </template>
 
 <script>
-import { genres } from '../data/movie-genres.js';
+import { genres } from '../../data/movie-genres.js';
 
 export default {
   props:{
