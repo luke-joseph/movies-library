@@ -2,7 +2,8 @@
 <div class="w-3/4">
       <div class="flex">
 
-        <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt="">
+        <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path"
+        :alt="movie.original_title + ' movie poster'">
 
         <div class="movie-info mx-12">
 
@@ -11,7 +12,7 @@
           <p class="mt-4 tracking-wide font-semibold text-gray-300 text-xl">
             {{ (movie.vote_average * 10) + '%' }}
             |
-            <span v-for="genre in movie.genre_ids">{{ genres[genre] }}, </span>
+            <span>FIX ME - GENRES</span>
             | {{ movie.release_date }}
           </p>
 

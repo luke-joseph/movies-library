@@ -2,10 +2,10 @@
   <div class="flex w-full mt-20 mb-32">
 
     <!-- Show Movie -->
-    <show-movie :movie="movie"></show-movie>
+    <show-movie :movie="movie" />
 
     <!-- Recommended -->
-    <show-movies-related :movie="movie"></show-movies-related>
+    <show-movies-related :related-movies="relatedMovies.results" />
 
   </div>
 </template>
@@ -16,6 +16,10 @@ import { genres } from '../../data/movie-genres.js';
 export default {
   props:{
     movie:{
+      type: Object,
+      required: true
+    },
+    relatedMovies:{
       type: Object,
       required: true
     }

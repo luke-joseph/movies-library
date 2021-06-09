@@ -1954,6 +1954,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -1999,6 +2000,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     movie: {
+      type: Object,
+      required: true
+    },
+    relatedMovies: {
       type: Object,
       required: true
     }
@@ -2068,42 +2073,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    movie: {
-      type: Object,
+    relatedMovies: {
+      type: Array,
       required: true
     }
   },
@@ -19990,7 +19964,7 @@ var render = function() {
       _c("img", {
         attrs: {
           src: "https://image.tmdb.org/t/p/w342/" + _vm.movie.poster_path,
-          alt: ""
+          alt: _vm.movie.original_title + " movie poster"
         }
       }),
       _vm._v(" "),
@@ -20011,16 +19985,13 @@ var render = function() {
                 _vm._s(_vm.movie.vote_average * 10 + "%") +
                 "\r\n            |\r\n            "
             ),
-            _vm._l(_vm.movie.genre_ids, function(genre) {
-              return _c("span", [_vm._v(_vm._s(_vm.genres[genre]) + ", ")])
-            }),
+            _c("span", [_vm._v("FIX ME - GENRES")]),
             _vm._v(
               "\r\n            | " +
                 _vm._s(_vm.movie.release_date) +
                 "\r\n          "
             )
-          ],
-          2
+          ]
         ),
         _vm._v(" "),
         _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
@@ -20079,7 +20050,9 @@ var render = function() {
     [
       _c("show-movie", { attrs: { movie: _vm.movie } }),
       _vm._v(" "),
-      _c("show-movies-related", { attrs: { movie: _vm.movie } })
+      _c("show-movies-related", {
+        attrs: { "related-movies": _vm.relatedMovies.results }
+      })
     ],
     1
   )
@@ -20107,104 +20080,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/4 pl-10" }, [
+  return _c(
+    "div",
+    { staticClass: "w-1/4 pl-10" },
+    [
       _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
         _vm._v("// Related Movies")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mini-movie mt-6" }, [
-        _c("div", { staticClass: "flex" }, [
-          _c("div", { staticClass: "w-16" }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
-                alt: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "movie-info ml-4" }, [
-            _c("h3", { staticClass: "text-xl tracking-wider" }, [
-              _vm._v("Movie Title")
+      _vm._l(_vm.relatedMovies, function(movie) {
+        return _c("div", { staticClass: "mini-movie mt-6" }, [
+          _c("div", { staticClass: "flex" }, [
+            _c("div", { staticClass: "w-16" }, [
+              _c("a", { attrs: { href: "/show/" + movie.id } }, [
+                _c("img", {
+                  attrs: {
+                    src: "https://image.tmdb.org/t/p/w92/" + movie.poster_path,
+                    alt: movie.original_title + " movie poster"
+                  }
+                })
+              ])
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-              _vm._v("Action, Thriller")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
-              _vm._v("08/06/2021")
+            _c("div", { staticClass: "movie-info ml-4" }, [
+              _c("a", { attrs: { href: "/show/" + movie.id } }, [
+                _c(
+                  "h3",
+                  { staticClass: "text-xl tracking-wider hover:underline" },
+                  [_vm._v(_vm._s(movie.original_title))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
+                _vm._v("FIX ME - GENRES")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
+                _vm._v(_vm._s(movie.release_date))
+              ])
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mini-movie mt-6" }, [
-        _c("div", { staticClass: "flex" }, [
-          _c("div", { staticClass: "w-16" }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
-                alt: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "movie-info ml-4" }, [
-            _c("h3", { staticClass: "text-xl tracking-wider" }, [
-              _vm._v("Movie Title")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-              _vm._v("Action, Thriller")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
-              _vm._v("08/06/2021")
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mini-movie mt-6" }, [
-        _c("div", { staticClass: "flex" }, [
-          _c("div", { staticClass: "w-16" }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
-                alt: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "movie-info ml-4" }, [
-            _c("h3", { staticClass: "text-xl tracking-wider" }, [
-              _vm._v("Movie Title")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-              _vm._v("Action, Thriller")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
-              _vm._v("08/06/2021")
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

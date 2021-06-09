@@ -3,71 +3,40 @@
     <div class="w-1/4 pl-10">
 
       <h2 class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
+
   <!-- Mini movie -->
-      <div class="mini-movie mt-6">
+
+      <div v-for="movie in relatedMovies" class="mini-movie mt-6">
+
         <div class="flex">
 
           <div class="w-16">
 
-            <img class="" src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg" alt="">
+            <a :href="'/show/' + movie.id">
+
+              <img :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
+              :alt="movie.original_title + ' movie poster'">
+
+            </a>
+
           </div>
 
           <div class="movie-info ml-4">
 
-            <h3 class="text-xl tracking-wider">Movie Title</h3>
+            <a :href="'/show/' + movie.id">
 
-            <p class="text-sm mt-1 text-gray-400">Action, Thriller</p>
+              <h3 class="text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
-            <p class="mt-1 font-semibold text-gray-300">08/06/2021</p>
+            </a>
+
+            <p class="text-sm mt-1 text-gray-400">FIX ME - GENRES</p>
+
+            <p class="mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
 
           </div>
-
 
         </div>
-      </div>
 
-      <div class="mini-movie mt-6">
-        <div class="flex">
-
-          <div class="w-16">
-
-            <img class="" src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg" alt="">
-          </div>
-
-          <div class="movie-info ml-4">
-
-            <h3 class="text-xl tracking-wider">Movie Title</h3>
-
-            <p class="text-sm mt-1 text-gray-400">Action, Thriller</p>
-
-            <p class="mt-1 font-semibold text-gray-300">08/06/2021</p>
-
-          </div>
-
-
-        </div>
-      </div>
-
-      <div class="mini-movie mt-6">
-        <div class="flex">
-
-          <div class="w-16">
-
-            <img class="" src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg" alt="">
-          </div>
-
-          <div class="movie-info ml-4">
-
-            <h3 class="text-xl tracking-wider">Movie Title</h3>
-
-            <p class="text-sm mt-1 text-gray-400">Action, Thriller</p>
-
-            <p class="mt-1 font-semibold text-gray-300">08/06/2021</p>
-
-          </div>
-
-
-        </div>
       </div>
 
     </div>
@@ -78,8 +47,8 @@ import { genres } from '../../data/movie-genres.js';
 
 export default {
   props:{
-    movie:{
-      type: Object,
+    relatedMovies:{
+      type: Array,
       required: true
     }
   },

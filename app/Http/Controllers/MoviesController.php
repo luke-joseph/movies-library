@@ -35,7 +35,12 @@ class MoviesController extends Controller
       $movie = Http::withToken(config('services.tmdb.key'))
       ->get($endpoint);
 
-      return view('show', compact('movie'));
+      $relatedMoviesEndpoint = $endpoint . "/similar";
+
+      $relatedMovies = Http::withToken(config('services.tmdb.key'))
+      ->get($relatedMoviesEndpoint);
+
+      return view('show', compact('movie', 'relatedMovies'));
     }
 
 }
