@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { genres } from '../../data/movie-genres.js';
+import { genres } from '../../../data/movie-genres.js';
 
 export default {
   props:{

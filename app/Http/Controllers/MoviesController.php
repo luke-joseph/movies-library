@@ -14,12 +14,21 @@ class MoviesController extends Controller
      */
     public function index()
     {
-      $endpoint = config('services.tmdb.api_url') . 'movie/popular';
-
       $popularMovies = Http::withToken(config('services.tmdb.key'))
-      ->get($endpoint);
+      ->get(config('services.tmdb.api_url') . 'movie/popular');
 
-      return view('index', compact('popularMovies'));
+      $topRatedMovies = Http::withToken(config('services.tmdb.key'))
+      ->get(config('services.tmdb.api_url') . 'movie/top_rated');
+
+      $upcomingMovies = Http::withToken(config('services.tmdb.key'))
+      ->get(config('services.tmdb.api_url') . 'movie/upcoming');
+
+        return view('index', compact(
+          'popularMovies',
+          'topRatedMovies',
+          'upcomingMovies',
+        )
+      );
     }
 
     /**

@@ -24,7 +24,7 @@
           <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
 
           <p class="text-sm mt-1 text-gray-400">
-            
+
             <span v-for="genre in movie.genre_ids">{{ genres[genre] }}, </span>
 
           </p>

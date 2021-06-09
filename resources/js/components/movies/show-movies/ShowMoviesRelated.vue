@@ -15,7 +15,7 @@
             <a :href="'/show/' + movie.id">
 
               <img :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
-              :alt="movie.original_title + ' movie poster'">
+              :alt="movie.original_title + ' movie poster'" class="hover:opacity-75">
 
             </a>
 
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { genres } from '../../data/movie-genres.js';
+import { genres } from '../../../data/movie-genres.js';
 
 export default {
   props:{
