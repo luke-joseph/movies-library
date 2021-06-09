@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
+use App\Helpers\GenreIdsToString;
 
 class MoviesController extends Controller
 {
@@ -14,8 +16,18 @@ class MoviesController extends Controller
      */
     public function index()
     {
-      $popularMovies = Http::withToken(config('services.tmdb.key'))
+      $rawPopularMovies = Http::withToken(config('services.tmdb.key'))
       ->get(config('services.tmdb.api_url') . 'movie/popular');
+
+      $popularMovies = collect($rawPopularMovies['results'])
+      ->map(function ($movie) {
+
+          return collect($movie)->merge([
+            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+            'genres' => GenreIdsToString::convert($movie['genre_ids'])
+          ]);
+
+      });
 
       $topRatedMovies = Http::withToken(config('services.tmdb.key'))
       ->get(config('services.tmdb.api_url') . 'movie/top_rated');

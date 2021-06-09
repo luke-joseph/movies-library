@@ -33,18 +33,12 @@
 </template>
 
 <script>
-import { genres } from '../../../data/movie-genres.js';
 
 export default {
   props:{
     movie:{
       type: Object,
       required: true
-    }
-  },
-  data(){
-    return{
-      genres: genres
     }
   }
 }

@@ -23,11 +23,7 @@
 
           <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
 
-          <p class="text-sm mt-1 text-gray-400">
-
-            <span v-for="genre in movie.genre_ids">{{ genres[genre] }}, </span>
-
-          </p>
+          <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
 
       </div>
 
@@ -37,24 +33,22 @@
 </template>
 
 <script>
-import { genres } from '../../data/movie-genres.js';
 
 export default {
   props:{
     popularMovies:{
-      type: Object,
+      type: Array,
       required: true
     }
   },
   data(){
     return{
-      amountToShow: 8,
-      genres: genres
+      amountToShow: 8
     }
   },
   computed:{
     movies: function(){
-      let movies = this.popularMovies.results;
+      let movies = this.popularMovies;
       movies.length = this.amountToShow;
       return movies;
     }

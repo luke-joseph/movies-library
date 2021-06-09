@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { genres } from '../../../data/movie-genres.js';
 
 export default {
   props:{
@@ -22,11 +21,6 @@ export default {
     relatedMovies:{
       type: Object,
       required: true
-    }
-  },
-  data(){
-    return{
-      genres: genres
     }
   }
 }

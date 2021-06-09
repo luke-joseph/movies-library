@@ -4,7 +4,7 @@
 
       <h2 class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
 
-  <!-- Mini movie -->
+      <!-- Mini movie -->
 
       <div v-for="movie in relatedMovies" class="mini-movie mt-6">
 
@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import { genres } from '../../../data/movie-genres.js';
 
 export default {
   props:{

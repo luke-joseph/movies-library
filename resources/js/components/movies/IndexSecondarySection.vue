@@ -81,7 +81,6 @@
 </template>
 
 <script>
-import { genres } from '../../data/movie-genres.js';
 
 export default {
   props:{
@@ -96,8 +95,7 @@ export default {
   },
   data(){
     return{
-      amountToShow: 8,
-      genres: genres
+      amountToShow: 8
     }
   },
   methods:{

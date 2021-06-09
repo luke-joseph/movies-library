@@ -1845,7 +1845,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../data/movie-genres.js */ "./resources/js/data/movie-genres.js");
 //
 //
 //
@@ -1928,7 +1927,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     topRatedMovies: {
@@ -1942,8 +1940,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      amountToShow: 8,
-      genres: _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres
+      amountToShow: 8
     };
   },
   methods: {
@@ -1966,7 +1963,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../data/movie-genres.js */ "./resources/js/data/movie-genres.js");
 //
 //
 //
@@ -2001,27 +1997,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     popularMovies: {
-      type: Object,
+      type: Array,
       required: true
     }
   },
   data: function data() {
     return {
-      amountToShow: 8,
-      genres: _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres
+      amountToShow: 8
     };
   },
   computed: {
     movies: function movies() {
-      var movies = this.popularMovies.results;
+      var movies = this.popularMovies;
       movies.length = this.amountToShow;
       return movies;
     }
@@ -2041,7 +2031,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../data/movie-genres.js */ "./resources/js/data/movie-genres.js");
 //
 //
 //
@@ -2076,18 +2065,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     movie: {
       type: Object,
       required: true
     }
-  },
-  data: function data() {
-    return {
-      genres: _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres
-    };
   }
 });
 
@@ -2104,7 +2087,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../data/movie-genres.js */ "./resources/js/data/movie-genres.js");
 //
 //
 //
@@ -2117,7 +2099,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     movie: {
@@ -2128,11 +2109,6 @@ __webpack_require__.r(__webpack_exports__);
       type: Object,
       required: true
     }
-  },
-  data: function data() {
-    return {
-      genres: _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres
-    };
   }
 });
 
@@ -2149,7 +2125,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../data/movie-genres.js */ "./resources/js/data/movie-genres.js");
 //
 //
 //
@@ -2194,7 +2169,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     relatedMovies: {
@@ -2204,7 +2178,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      genres: _data_movie_genres_js__WEBPACK_IMPORTED_MODULE_0__.genres
+      genres: genres
     };
   }
 });
@@ -2240,41 +2214,6 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
-
-/***/ }),
-
-/***/ "./resources/js/data/movie-genres.js":
-/*!*******************************************!*\
-  !*** ./resources/js/data/movie-genres.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "genres": () => (/* binding */ genres)
-/* harmony export */ });
-var genres = {
-  28: "Action",
-  12: "Adventure",
-  16: "Animation",
-  35: "Comedy",
-  80: "Crime",
-  99: "Documentary",
-  18: "Drama",
-  10751: "Family",
-  14: "Fantasy",
-  36: "History",
-  27: "Horror",
-  10402: "Music",
-  9648: "Mystery",
-  10749: "Romance",
-  878: "Science Fiction",
-  10770: "TV Movie",
-  53: "Thriller",
-  10752: "War",
-  37: "Western"
-};
 
 /***/ }),
 
@@ -20280,14 +20219,9 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: "text-sm mt-1 text-gray-400" },
-            _vm._l(movie.genre_ids, function(genre) {
-              return _c("span", [_vm._v(_vm._s(_vm.genres[genre]) + ", ")])
-            }),
-            0
-          )
+          _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
+            _vm._v(_vm._s(movie.genres))
+          ])
         ])
       }),
       0
