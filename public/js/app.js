@@ -20026,7 +20026,7 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "movie-info mx-12" }, [
-                _c("a", { attrs: { href: "/show/" + movie.id } }, [
+                _c("a", { attrs: { href: "/movie/" + movie.id } }, [
                   _c(
                     "h3",
                     { staticClass: "text-4xl tracking-wider hover:underline" },
@@ -20095,7 +20095,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "movie-info ml-4" }, [
-                  _c("a", { attrs: { href: "/show/" + movie.id } }, [
+                  _c("a", { attrs: { href: "/movie/" + movie.id } }, [
                     _c(
                       "h3",
                       { staticClass: "text-xl tracking-wider hover:underline" },
@@ -20172,7 +20172,7 @@ var render = function() {
       },
       _vm._l(_vm.popularMovies, function(movie) {
         return _c("div", {}, [
-          _c("a", { attrs: { href: "/show/" + movie.id } }, [
+          _c("a", { attrs: { href: "/movie/" + movie.id } }, [
             _c("img", {
               staticClass: "hover:opacity-75",
               attrs: {
@@ -20182,7 +20182,7 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/show/" + movie.id } }, [
+          _c("a", { attrs: { href: "/movie/" + movie.id } }, [
             _c(
               "h3",
               { staticClass: "text-3xl mt-2 tracking-wider hover:underline" },
@@ -20369,7 +20369,7 @@ var render = function() {
         return _c("div", { staticClass: "mini-movie mt-6" }, [
           _c("div", { staticClass: "flex" }, [
             _c("div", {}, [
-              _c("a", { attrs: { href: "/show/" + movie.id } }, [
+              _c("a", { attrs: { href: "/movie/" + movie.id } }, [
                 _c("img", {
                   staticClass: "hover:opacity-75 small-poster",
                   attrs: {
@@ -20381,7 +20381,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "movie-info ml-4" }, [
-              _c("a", { attrs: { href: "/show/" + movie.id } }, [
+              _c("a", { attrs: { href: "/movie/" + movie.id } }, [
                 _c(
                   "h3",
                   { staticClass: "text-xl tracking-wider hover:underline" },

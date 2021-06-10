@@ -7,7 +7,7 @@
 
       <div v-for="movie in popularMovies" class="">
 
-          <a :href="'/show/' + movie.id">
+          <a :href="'/movie/' + movie.id">
 
             <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path"
             :alt="movie.original_title + ' film poster'"
@@ -15,7 +15,7 @@
 
           </a>
 
-          <a :href="'/show/' + movie.id">
+          <a :href="'/movie/' + movie.id">
 
             <h3 class="text-3xl mt-2 tracking-wider hover:underline">{{ movie.original_title }}</h3>
 

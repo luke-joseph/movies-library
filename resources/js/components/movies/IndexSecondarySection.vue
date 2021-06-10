@@ -15,7 +15,7 @@
 
         <div class="movie-info mx-12">
 
-          <a :href="'/show/' + movie.id">
+          <a :href="'/movie/' + movie.id">
 
             <h3 class="text-4xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
@@ -59,7 +59,7 @@
 
           <div class="movie-info ml-4">
 
-            <a :href="'/show/' + movie.id">
+            <a :href="'/movie/' + movie.id">
 
               <h3 class="text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 

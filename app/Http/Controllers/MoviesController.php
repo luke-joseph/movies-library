@@ -55,7 +55,7 @@ class MoviesController extends Controller
 
       })->take(6);
 
-        return view('index', compact(
+        return view('movies.index', compact(
           'popularMovies',
           'topRatedMovies',
           'upcomingMovies',
@@ -102,7 +102,7 @@ class MoviesController extends Controller
 
       })->take(4);
 
-      return view('show', compact('movie', 'relatedMovies'));
+      return view('movies.show', compact('movie', 'relatedMovies'));
     }
 
 }
