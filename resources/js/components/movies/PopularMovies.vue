@@ -3,7 +3,7 @@
 
     <h2 class="text-3xl font-bold text-indigo-300">// Popular Movies</h2>
 
-    <div class="movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16">
+    <div class="movie-poster-container mt-12 grid sm:grid-flow-col grid-cols-1 grid-rows-8 sm:grid-cols-2 sm:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-x-4 gap-y-16">
 
       <div v-for="movie in popularMovies" class="">
 

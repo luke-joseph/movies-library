@@ -1,19 +1,35 @@
 <template>
-  <div class="flex w-full mt-20 mb-64">
+  <div class="flex flex-col lg:flex-row w-full mt-20 mb-64">
 
     <!-- Todays Recommended -->
-    <div class="w-2/3">
+    <div class="w-full sm:w-2/3">
 
       <h2 class="text-3xl font-bold text-indigo-300">// Today's Recommended Movies</h2>
 
-      <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex bg-gray-900 p-6 rounded">
+      <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex flex-col sm:flex-row sm:bg-gray-900 sm:p-6 rounded">
 
           <img @click="showMovie(movie.id)"
           :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path"
           :alt="movie.original_title + ' film poster'"
           class="hover:opacity-75 cursor-pointer">
 
-        <div class="movie-info mx-12">
+          <!-- mobile devices info -->
+          <div class="sm:hidden">
+
+              <a :href="'/movie/' + movie.id">
+
+                <h3 class="text-3xl mt-2 tracking-wider hover:underline">{{ movie.original_title }}</h3>
+
+              </a>
+
+              <p class="mt-1 tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
+
+              <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
+
+          </div>
+
+          <!-- md screens up info -->
+        <div class="hidden sm:flex flex-col movie-info mx-12">
 
           <a :href="'/movie/' + movie.id">
 
@@ -41,8 +57,8 @@
     </div>
 
   <!-- Coming Soon -->
-    <div class="w-1/3">
-      <div class="w-3/4 ml-auto h-full">
+    <div class="mt-8 sm:mt-0 sm:w-1/3">
+      <div class="sm:w-3/4 sm:ml-auto h-full">
       <h2 class="text-3xl font-bold text-indigo-300 mb-8">// Upcoming Movies</h2>
   <!-- Mini movie -->
       <div v-for="movie in upcomingMovies" class="mini-movie mt-6">

@@ -1927,6 +1927,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     topRatedMovies: {
@@ -19995,130 +20011,181 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex w-full mt-20 mb-64" }, [
-    _c(
-      "div",
-      { staticClass: "w-2/3" },
-      [
-        _c("h2", { staticClass: "text-3xl font-bold text-indigo-300" }, [
-          _vm._v("// Today's Recommended Movies")
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.topRatedMovies, function(movie) {
-          return _c(
-            "div",
-            {
-              staticClass:
-                "recommended-movie-container mt-8 flex bg-gray-900 p-6 rounded"
-            },
-            [
-              _c("img", {
-                staticClass: "hover:opacity-75 cursor-pointer",
-                attrs: {
-                  src: "https://image.tmdb.org/t/p/w300/" + movie.poster_path,
-                  alt: movie.original_title + " film poster"
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.showMovie(movie.id)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "movie-info mx-12" }, [
-                _c("a", { attrs: { href: "/movie/" + movie.id } }, [
-                  _c(
-                    "h3",
-                    { staticClass: "text-4xl tracking-wider hover:underline" },
-                    [_vm._v(_vm._s(movie.original_title))]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                  _vm._v(_vm._s(movie.genres))
-                ]),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "mt-1 tracking-wide font-semibold text-gray-300"
-                  },
-                  [
-                    _vm._v(
-                      _vm._s(movie.vote_average * 10 + "%") +
-                        " | Released " +
-                        _vm._s(movie.release_date)
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "mt-4 text-gray-300" }, [
-                  _vm._v("\n          " + _vm._s(movie.overview) + "\n        ")
-                ]),
-                _vm._v(" "),
-                _vm._m(0, true)
-              ])
-            ]
-          )
-        })
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "w-1/3" }, [
+  return _c(
+    "div",
+    { staticClass: "flex flex-col lg:flex-row w-full mt-20 mb-64" },
+    [
       _c(
         "div",
-        { staticClass: "w-3/4 ml-auto h-full" },
+        { staticClass: "w-full sm:w-2/3" },
         [
-          _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
-            _vm._v("// Upcoming Movies")
+          _c("h2", { staticClass: "text-3xl font-bold text-indigo-300" }, [
+            _vm._v("// Today's Recommended Movies")
           ]),
           _vm._v(" "),
-          _vm._l(_vm.upcomingMovies, function(movie) {
-            return _c("div", { staticClass: "mini-movie mt-6" }, [
-              _c("div", { staticClass: "flex" }, [
-                _c("div", {}, [
-                  _c("img", {
-                    staticClass: "hover:opacity-75 cursor-pointer small-poster",
-                    attrs: {
-                      src:
-                        "https://image.tmdb.org/t/p/w92/" + movie.poster_path,
-                      alt: movie.original_title + " film poster"
-                    },
-                    on: {
-                      click: function($event) {
-                        return _vm.showMovie(movie.id)
-                      }
+          _vm._l(_vm.topRatedMovies, function(movie) {
+            return _c(
+              "div",
+              {
+                staticClass:
+                  "recommended-movie-container mt-8 flex flex-col sm:flex-row sm:bg-gray-900 sm:p-6 rounded"
+              },
+              [
+                _c("img", {
+                  staticClass: "hover:opacity-75 cursor-pointer",
+                  attrs: {
+                    src: "https://image.tmdb.org/t/p/w300/" + movie.poster_path,
+                    alt: movie.original_title + " film poster"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.showMovie(movie.id)
                     }
-                  })
-                ]),
+                  }
+                }),
                 _vm._v(" "),
-                _c("div", { staticClass: "movie-info ml-4" }, [
+                _c("div", { staticClass: "sm:hidden" }, [
                   _c("a", { attrs: { href: "/movie/" + movie.id } }, [
                     _c(
                       "h3",
-                      { staticClass: "text-xl tracking-wider hover:underline" },
+                      {
+                        staticClass:
+                          "text-3xl mt-2 tracking-wider hover:underline"
+                      },
                       [_vm._v(_vm._s(movie.original_title))]
                     )
                   ]),
                   _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "mt-1 tracking-wide font-semibold text-gray-300"
+                    },
+                    [
+                      _vm._v(
+                        _vm._s(movie.vote_average * 10 + "%") +
+                          " | " +
+                          _vm._s(movie.release_date)
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
                   _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
                     _vm._v(_vm._s(movie.genres))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
-                    _vm._v(_vm._s(movie.release_date))
                   ])
-                ])
-              ])
-            ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "hidden sm:flex flex-col movie-info mx-12" },
+                  [
+                    _c("a", { attrs: { href: "/movie/" + movie.id } }, [
+                      _c(
+                        "h3",
+                        {
+                          staticClass: "text-4xl tracking-wider hover:underline"
+                        },
+                        [_vm._v(_vm._s(movie.original_title))]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
+                      _vm._v(_vm._s(movie.genres))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mt-1 tracking-wide font-semibold text-gray-300"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(movie.vote_average * 10 + "%") +
+                            " | Released " +
+                            _vm._s(movie.release_date)
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mt-4 text-gray-300" }, [
+                      _vm._v(
+                        "\n          " + _vm._s(movie.overview) + "\n        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(0, true)
+                  ]
+                )
+              ]
+            )
           })
         ],
         2
-      )
-    ])
-  ])
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-8 sm:mt-0 sm:w-1/3" }, [
+        _c(
+          "div",
+          { staticClass: "sm:w-3/4 sm:ml-auto h-full" },
+          [
+            _c(
+              "h2",
+              { staticClass: "text-3xl font-bold text-indigo-300 mb-8" },
+              [_vm._v("// Upcoming Movies")]
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.upcomingMovies, function(movie) {
+              return _c("div", { staticClass: "mini-movie mt-6" }, [
+                _c("div", { staticClass: "flex" }, [
+                  _c("div", {}, [
+                    _c("img", {
+                      staticClass:
+                        "hover:opacity-75 cursor-pointer small-poster",
+                      attrs: {
+                        src:
+                          "https://image.tmdb.org/t/p/w92/" + movie.poster_path,
+                        alt: movie.original_title + " film poster"
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.showMovie(movie.id)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "movie-info ml-4" }, [
+                    _c("a", { attrs: { href: "/movie/" + movie.id } }, [
+                      _c(
+                        "h3",
+                        {
+                          staticClass: "text-xl tracking-wider hover:underline"
+                        },
+                        [_vm._v(_vm._s(movie.original_title))]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
+                      _vm._v(_vm._s(movie.genres))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "mt-1 font-semibold text-gray-300" },
+                      [_vm._v(_vm._s(movie.release_date))]
+                    )
+                  ])
+                ])
+              ])
+            })
+          ],
+          2
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -20168,7 +20235,7 @@ var render = function() {
       "div",
       {
         staticClass:
-          "movie-poster-container mt-12 grid grid-flow-col grid-cols-4 grid-rows-2 gap-x-4 gap-y-16"
+          "movie-poster-container mt-12 grid sm:grid-flow-col grid-cols-1 grid-rows-8 sm:grid-cols-2 sm:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-x-4 gap-y-16"
       },
       _vm._l(_vm.popularMovies, function(movie) {
         return _c("div", {}, [
