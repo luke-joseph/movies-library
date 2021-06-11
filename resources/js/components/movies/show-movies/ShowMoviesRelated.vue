@@ -12,9 +12,9 @@
 
           <div class="">
 
-            <a :href="'/movie/' + movie.id">
+            <a :href="'/movie/show/' + movie.id">
 
-              <img :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
+              <img :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
               :alt="movie.original_title + ' movie poster'" class="hover:opacity-75 small-poster">
 
             </a>
@@ -23,7 +23,7 @@
 
           <div class="movie-info ml-4">
 
-            <a :href="'/movie/' + movie.id">
+            <a :href="'/movie/show/' + movie.id">
 
               <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 

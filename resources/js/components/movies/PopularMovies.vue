@@ -7,15 +7,15 @@
 
       <div v-for="movie in popularMovies" class="">
 
-          <a :href="'/movie/' + movie.id">
+          <a :href="'/movie/show/' + movie.id">
 
-            <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path"
+            <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
             :alt="movie.original_title + ' film poster'"
             class="hover:opacity-75">
 
           </a>
 
-          <a :href="'/movie/' + movie.id">
+          <a :href="'/movie/show/' + movie.id">
 
             <h3 class="text-4xl sm:text-3xl mt-2 sm:tracking-wider hover:underline text-white">{{ movie.original_title }}</h3>
 

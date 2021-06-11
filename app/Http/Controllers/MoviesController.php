@@ -106,4 +106,28 @@ class MoviesController extends Controller
       return view('movies.show', compact('movie', 'relatedMovies'));
     }
 
+    /**
+     * return a listing of searched movies
+     *
+     * @return Collection
+     */
+    public function search()
+    {
+
+      $rawSearchMovies = Http::withToken(config('services.tmdb.key'))
+      ->get(config('services.tmdb.api_url') . 'search/movie?query=' . request('query'));
+
+      $searchResults = collect($rawSearchMovies['results'])
+      ->map(function ($movie) {
+
+          return collect($movie)->merge([
+            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+            'genres' => GenreIdsToString::convert($movie['genre_ids'])
+          ]);
+
+      });
+
+      return view('movies.search', compact('searchResults'));
+    }
+
 }

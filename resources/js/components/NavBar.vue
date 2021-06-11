@@ -47,7 +47,17 @@ export default {
   },
   methods:{
     searchMovies(){
-      console.log(this.searchQuery);
+
+      window.location.href = '/movie/search?query=' + this.searchQuery;
+      return;
+
+      axios.get('/movie/search?query=' + this.searchQuery)
+      .then((response) => {
+      console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
     }
   }
 }

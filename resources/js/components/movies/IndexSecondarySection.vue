@@ -9,14 +9,14 @@
       <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex flex-col sm:flex-row sm:bg-gray-900 sm:p-6 rounded">
 
           <img @click="showMovie(movie.id)"
-          :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path"
+          :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
           :alt="movie.original_title + ' film poster'"
           class="hover:opacity-75 cursor-pointer">
 
           <!-- mobile devices info -->
           <div class="sm:hidden">
 
-              <a :href="'/movie/' + movie.id">
+              <a :href="'/movie/show/' + movie.id">
 
                 <h3 class="text-3xl mt-2 tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
@@ -31,7 +31,7 @@
           <!-- md screens up info -->
         <div class="hidden sm:flex flex-col movie-info mx-12">
 
-          <a :href="'/movie/' + movie.id">
+          <a :href="'/movie/show/' + movie.id">
 
             <h3 class="text-4xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
@@ -67,7 +67,7 @@
           <div class="">
 
             <img @click="showMovie(movie.id)"
-            :src="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
+            :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
             :alt="movie.original_title + ' film poster'"
             class="hover:opacity-75 cursor-pointer small-poster">
 
@@ -75,7 +75,7 @@
 
           <div class="movie-info ml-4">
 
-            <a :href="'/movie/' + movie.id">
+            <a :href="'/movie/show/' + movie.id">
 
               <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
@@ -116,7 +116,7 @@ export default {
   },
   methods:{
     showMovie(movieId){
-     window.location.href = window.location.href + 'movie/' + movieId;
+     window.location.href = window.location.href + 'movie/show/' + movieId;
     }
   }
 }
