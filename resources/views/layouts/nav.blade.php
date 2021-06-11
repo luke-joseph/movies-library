@@ -1,14 +1,14 @@
-<nav class="w-full bg-gray-900">
+<nav class="w-full bg-gray-900 px-6 lg:px-0">
   <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
-    <div class="flex flex-col sm:flex-row items-center sm:w-1/3 text-lg">
+    <div class="flex flex-col sm:flex-row items-center lg:w-1/3 text-lg">
       <a href="/" class="text-white mt-1 sm:mt-0">MoviesDB </a>
       <a href="/" class="text-white mt-2 sm:mt-0 sm:ml-10">Movies</a>
       <a href="#" class="text-white mt-1 sm:mt-0 sm:ml-6">TV shows</a>
-      <a href="#" class="text-white mt-1 sm:mt-0 sm:ml-6">Actors</a>
+      <a href="#" class="text-white mt-1 sm:mt-0 sm:ml-6 mb-6 sm:mb-0">Actors</a>
     </div>
-    <div class="sm:w-1/3">
+    <div class="hidden sm:block sm:w-1/3">
       <div id="search" class="flex flex-col sm:flex-row sm:flex-wrap items-center w-full mx-auto rounded p-4 justify-between">
-      <div class="w-5/6 mx-auto sm:mx-0 sm:w-1/2 mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm mr-auto lg:mr-0">
+      <div class="w-5/6 sm:w-full mx-auto sm:mx-0 lg:w-1/2 mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm mr-auto lg:mr-0">
         <div class="flex w-full rounded bg-white">
           <input class="w-full py-1 ml-3 text-grey-700 leading-snug focus:outline-none" type="text" name="movie_search" v-model="searchValue" value="" placeholder="Search Movies...">
           <svg data-testid="search-icon" xmlns="http://www.w3.org/2000/svg" @click="searchMovies" viewBox="0 0 24 24" class="cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search">
