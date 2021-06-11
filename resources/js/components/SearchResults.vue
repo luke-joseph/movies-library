@@ -10,8 +10,13 @@
   <!-- Movie Cards -->
       <div v-for="result in searchResults" class="flex flex-col sm:flex-row mb-8 sm:bg-gray-900 sm:p-6 sm:rounded">
 
-        <img :src="'https://image.tmdb.org/t/p/' + imageWidth + result.poster_path"
+        <!-- Poster Exists -->
+        <img v-if="result.poster_path" :src="'https://image.tmdb.org/t/p/' + imageWidth + result.poster_path"
         :alt="result.original_title + ' poster'">
+
+        <!-- Show placeholder -->
+        <img v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1)"
+        :alt="result.original_title + ' no poster found'">
 
         <div class="result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
 

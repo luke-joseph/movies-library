@@ -1964,6 +1964,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     searchResults: {
@@ -20514,15 +20519,23 @@ var render = function() {
               "flex flex-col sm:flex-row mb-8 sm:bg-gray-900 sm:p-6 sm:rounded"
           },
           [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://image.tmdb.org/t/p/" +
-                  _vm.imageWidth +
-                  result.poster_path,
-                alt: result.original_title + " poster"
-              }
-            }),
+            result.poster_path
+              ? _c("img", {
+                  attrs: {
+                    src:
+                      "https://image.tmdb.org/t/p/" +
+                      _vm.imageWidth +
+                      result.poster_path,
+                    alt: result.original_title + " poster"
+                  }
+                })
+              : _c("img", {
+                  attrs: {
+                    src:
+                      "https://via.placeholder.com/" + _vm.imageWidth.slice(1),
+                    alt: result.original_title + " no poster found"
+                  }
+                }),
             _vm._v(" "),
             _c(
               "div",
