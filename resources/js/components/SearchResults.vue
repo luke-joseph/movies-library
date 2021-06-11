@@ -7,7 +7,8 @@
 
   <p class="mb-10" v-else>Your Search returned 0 results</p>
 
-  <!-- Movie Cards -->
+  <!-- Cards -->
+
       <div v-for="result in searchResults" class="flex flex-col sm:flex-row mb-8 sm:bg-gray-900 sm:p-6 sm:rounded">
 
         <!-- Poster Exists -->
@@ -17,14 +18,14 @@
         :alt="result.original_title + ' poster'"
         class="cursor-pointer">
 
-        <!-- Show placeholder -->
-        <img @click="showMovie(result.id)" v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1)"
+        <!-- Poster Doesn't Exist - Show placeholder -->
+        <img @click="showMovie(result.id)" v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1) + 'x278'"
         :alt="result.original_title + ' no poster found'">
 
         <div class="result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
 
           <a :href="'/movie/show/' + result.id">
-            <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ result.original_title }}</h3>
+            <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white hover:underline">{{ result.original_title }}</h3>
           </a>
 
 

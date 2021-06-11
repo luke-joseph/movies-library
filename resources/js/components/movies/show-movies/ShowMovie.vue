@@ -2,8 +2,15 @@
 <div class="w-full lg:w-3/4">
       <div class="flex flex-col sm:flex-row">
 
-        <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
-        :alt="movie.original_title + ' poster'">
+        <!-- Poster Exists -->
+        <img v-if="movie.poster_path"
+        :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
+        :alt="movie.original_title + ' poster'"
+        class="cursor-pointer">
+
+        <!-- Poster Doesn't Exist - Show placeholder -->
+        <img v-else src="https://via.placeholder.com/342"
+        :alt="movie.original_title + ' no poster found'">
 
         <div class="movie-info md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
 

@@ -1975,6 +1975,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     searchResults: {
@@ -2201,6 +2202,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -20549,7 +20557,9 @@ var render = function() {
               : _c("img", {
                   attrs: {
                     src:
-                      "https://via.placeholder.com/" + _vm.imageWidth.slice(1),
+                      "https://via.placeholder.com/" +
+                      _vm.imageWidth.slice(1) +
+                      "x278",
                     alt: result.original_title + " no poster found"
                   },
                   on: {
@@ -20571,7 +20581,7 @@ var render = function() {
                     "h3",
                     {
                       staticClass:
-                        "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
+                        "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white hover:underline"
                     },
                     [_vm._v(_vm._s(result.original_title))]
                   )
@@ -20977,12 +20987,20 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w-full lg:w-3/4" }, [
     _c("div", { staticClass: "flex flex-col sm:flex-row" }, [
-      _c("img", {
-        attrs: {
-          src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
-          alt: _vm.movie.original_title + " poster"
-        }
-      }),
+      _vm.movie.poster_path
+        ? _c("img", {
+            staticClass: "cursor-pointer",
+            attrs: {
+              src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
+              alt: _vm.movie.original_title + " poster"
+            }
+          })
+        : _c("img", {
+            attrs: {
+              src: "https://via.placeholder.com/342",
+              alt: _vm.movie.original_title + " no poster found"
+            }
+          }),
       _vm._v(" "),
       _c(
         "div",

@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use App\Helpers\GenreIdsToString;
 
 /**
- *
+ * The api to The Movie Database api
  */
 class tmdbApi
 {
@@ -22,6 +22,7 @@ class tmdbApi
 
         return collect($movie)->merge([
 
+          // check release date exists on the movie and format it if it does
           'release_date' => array_key_exists('release_date', $movie) ?
           Carbon::create($movie['release_date'])->toFormattedDateString()
           : null,
