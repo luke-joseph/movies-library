@@ -5,7 +5,7 @@
 <div id="app">
 
   <show-movies-component
-  :movie="{{ $movie }}"
+  :movie="{{ $singleMovie }}"
   :related-movies="{{ $relatedMovies }}"
   />
 

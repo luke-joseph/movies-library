@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 use App\Helpers\GenreIdsToString;
+use App\TMDB\tmdbApi;
 
 class MoviesController extends Controller
 {
@@ -16,44 +17,12 @@ class MoviesController extends Controller
      */
     public function index()
     {
-      $rawPopularMovies = Http::withToken(config('services.tmdb.key'))
-      ->get(config('services.tmdb.api_url') . 'movie/popular');
 
-      $popularMovies = collect($rawPopularMovies['results'])
-      ->map(function ($movie) {
+      $popularMovies = tmdbApi::getMovies('movie/popular', 8);
 
-          return collect($movie)->merge([
-            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
-            'genres' => GenreIdsToString::convert($movie['genre_ids'])
-          ]);
+      $topRatedMovies = tmdbApi::getMovies('movie/top_rated', 2);
 
-      })->take(8);
-
-      $rawTopRatedMovies = Http::withToken(config('services.tmdb.key'))
-      ->get(config('services.tmdb.api_url') . 'movie/top_rated');
-
-      $topRatedMovies = collect($rawTopRatedMovies['results'])
-      ->map(function ($movie) {
-
-          return collect($movie)->merge([
-            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
-            'genres' => GenreIdsToString::convert($movie['genre_ids'])
-          ]);
-
-      })->take(2);
-
-      $rawUpcomingMovies = Http::withToken(config('services.tmdb.key'))
-      ->get(config('services.tmdb.api_url') . 'movie/upcoming');
-
-      $upcomingMovies = collect($rawUpcomingMovies['results'])
-      ->map(function ($movie) {
-
-          return collect($movie)->merge([
-            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
-            'genres' => GenreIdsToString::convert($movie['genre_ids'])
-          ]);
-
-      })->take(6);
+      $upcomingMovies = tmdbApi::getMovies('movie/upcoming', 6);
 
         return view('movies.index', compact(
           'popularMovies',
@@ -61,6 +30,7 @@ class MoviesController extends Controller
           'upcomingMovies',
         )
       );
+
     }
 
     /**
@@ -69,41 +39,15 @@ class MoviesController extends Controller
      * @param  int  $movie
      * @return View
      */
-    public function show($movie)
+    public function show($movieId)
     {
 
-      $endpoint = config('services.tmdb.api_url') . "movie/$movie";
+      $singleMovie = tmdbApi::getSingleMovie("movie/" . $movieId);
 
-      $movieRaw = Http::withToken(config('services.tmdb.key'))
-      ->get($endpoint);
+      $relatedMovies = tmdbApi::getMovies("movie/" . $movieId . "/similar", 4);
 
-      $singleMovie = collect(json_decode($movieRaw->getBody(), true));
+      return view('movies.show', compact('singleMovie', 'relatedMovies'));
 
-      $genresArray = array_map(function($genre){
-        return $genre['id'];
-      }, $singleMovie['genres']);
-
-      $movie = $singleMovie->merge([
-        'release_date' => Carbon::create($singleMovie['release_date'])->toFormattedDateString(),
-        'genres' => GenreIdsToString::convert($genresArray)
-      ]);
-
-      $relatedMoviesEndpoint = $endpoint . "/similar";
-
-      $relatedMoviesRaw = Http::withToken(config('services.tmdb.key'))
-      ->get($relatedMoviesEndpoint);
-
-      $relatedMovies = collect($relatedMoviesRaw['results'])
-      ->map(function ($movie) {
-
-          return collect($movie)->merge([
-            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
-            'genres' => GenreIdsToString::convert($movie['genre_ids'])
-          ]);
-
-      })->take(4);
-
-      return view('movies.show', compact('movie', 'relatedMovies'));
     }
 
     /**
@@ -114,22 +58,10 @@ class MoviesController extends Controller
     public function search()
     {
 
-      $rawSearchMovies = Http::withToken(config('services.tmdb.key'))
-      ->get(config('services.tmdb.api_url') . 'search/movie?query=' . request('query'));
+      $searchResults = tmdbApi::searchMovies('search/movie?query=' . request('query'));
 
-      $searchResults = collect($rawSearchMovies['results'])
-      ->map(function ($movie) {
+      return view('movies.search', compact('searchResults'));
 
-          return collect($movie)->merge([
-            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
-            'genres' => GenreIdsToString::convert($movie['genre_ids'])
-          ]);
-
-      });
-
-      $totalResults = $rawSearchMovies['total_results'];
-
-      return view('movies.search', compact('searchResults', 'totalResults'));
     }
 
 }

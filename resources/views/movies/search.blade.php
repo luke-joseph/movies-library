@@ -5,8 +5,8 @@
 <div id="app">
 
   <search-results
-  :search-results="{{ $searchResults }}"
-  :total-results ="{{ $totalResults }}"
+  :search-results="{{ $searchResults['movies'] }}"
+  :total-results ="{{ $searchResults['total_results'] }}"
   />
 
 </div>
