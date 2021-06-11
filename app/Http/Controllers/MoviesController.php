@@ -97,7 +97,8 @@ class MoviesController extends Controller
       ->map(function ($movie) {
 
           return collect($movie)->merge([
-            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString()
+            'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+            'genres' => GenreIdsToString::convert($movie['genre_ids'])
           ]);
 
       })->take(4);

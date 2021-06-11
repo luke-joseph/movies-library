@@ -1,13 +1,13 @@
 <template>
-<div class="w-full sm:w-3/4">
+<div class="w-full lg:w-3/4">
       <div class="flex flex-col sm:flex-row">
 
         <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path"
         :alt="movie.original_title + ' movie poster'">
 
-        <div class="movie-info sm:mx-12">
+        <div class="movie-info md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
 
-          <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider hover:underline text-white">{{ movie.original_title }}</h3>
+          <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ movie.original_title }}</h3>
 
           <p class="mt-4 tracking-wide font-semibold text-gray-300 text-xl">
             {{ (movie.vote_average * 10) + '%' }}

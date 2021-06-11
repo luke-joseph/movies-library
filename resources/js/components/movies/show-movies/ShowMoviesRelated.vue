@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-full sm:w-1/4 sm:pl-10 mt-16 sm:mt-0">
+    <div class="w-full lg:w-1/4 lg:pl-10 mt-16 lg:mt-0">
 
       <h2 v-if="relatedMovies.length" class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
 
@@ -25,13 +25,13 @@
 
             <a :href="'/movie/' + movie.id">
 
-              <h3 class="text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
+              <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
             </a>
 
-            <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
+            <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400">{{ movie.genres }}</p>
 
-            <p class="mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
+            <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
 
           </div>
 

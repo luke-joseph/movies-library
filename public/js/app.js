@@ -20322,7 +20322,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w-full sm:w-3/4" }, [
+  return _c("div", { staticClass: "w-full lg:w-3/4" }, [
     _c("div", { staticClass: "flex flex-col sm:flex-row" }, [
       _c("img", {
         attrs: {
@@ -20331,45 +20331,48 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "movie-info sm:mx-12" }, [
-        _c(
-          "h3",
-          {
-            staticClass:
-              "text-4xl mt-2 sm:mt-0 sm:tracking-wider hover:underline text-white"
-          },
-          [_vm._v(_vm._s(_vm.movie.original_title))]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass:
-              "mt-4 tracking-wide font-semibold text-gray-300 text-xl"
-          },
-          [
+      _c(
+        "div",
+        { staticClass: "movie-info md:ml-6 md:mr-2 lg:ml-12 lg:mr-12" },
+        [
+          _c(
+            "h3",
+            {
+              staticClass: "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
+            },
+            [_vm._v(_vm._s(_vm.movie.original_title))]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            {
+              staticClass:
+                "mt-4 tracking-wide font-semibold text-gray-300 text-xl"
+            },
+            [
+              _vm._v(
+                "\r\n            " +
+                  _vm._s(_vm.movie.vote_average * 10 + "%") +
+                  "\r\n            |\r\n            "
+              ),
+              _c("span", [_vm._v(_vm._s(_vm.movie.genres))]),
+              _vm._v(
+                "\r\n            | " +
+                  _vm._s(_vm.movie.release_date) +
+                  "\r\n          "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
             _vm._v(
-              "\r\n            " +
-                _vm._s(_vm.movie.vote_average * 10 + "%") +
-                "\r\n            |\r\n            "
-            ),
-            _c("span", [_vm._v(_vm._s(_vm.movie.genres))]),
-            _vm._v(
-              "\r\n            | " +
-                _vm._s(_vm.movie.release_date) +
-                "\r\n          "
+              "\r\n            " + _vm._s(_vm.movie.overview) + "\r\n          "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
-          _vm._v(
-            "\r\n            " + _vm._s(_vm.movie.overview) + "\r\n          "
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ]
+      )
     ])
   ])
 }
@@ -20414,7 +20417,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex flex-col sm:flex-row w-full mt-8 sm:mt-20 mb-32" },
+    { staticClass: "flex flex-col lg:flex-row w-full mt-8 lg:mt-20 mb-32" },
     [
       _c("show-movie", { attrs: { movie: _vm.movie } }),
       _vm._v(" "),
@@ -20450,7 +20453,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-full sm:w-1/4 sm:pl-10 mt-16 sm:mt-0" },
+    { staticClass: "w-full lg:w-1/4 lg:pl-10 mt-16 lg:mt-0" },
     [
       _vm.relatedMovies.length
         ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
@@ -20477,18 +20480,31 @@ var render = function() {
               _c("a", { attrs: { href: "/movie/" + movie.id } }, [
                 _c(
                   "h3",
-                  { staticClass: "text-xl tracking-wider hover:underline" },
+                  {
+                    staticClass:
+                      "text-xl md:text-4xl lg:text-xl tracking-wider hover:underline"
+                  },
                   [_vm._v(_vm._s(movie.original_title))]
                 )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                _vm._v(_vm._s(movie.genres))
-              ]),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400"
+                },
+                [_vm._v(_vm._s(movie.genres))]
+              ),
               _vm._v(" "),
-              _c("p", { staticClass: "mt-1 font-semibold text-gray-300" }, [
-                _vm._v(_vm._s(movie.release_date))
-              ])
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300"
+                },
+                [_vm._v(_vm._s(movie.release_date))]
+              )
             ])
           ])
         ])
