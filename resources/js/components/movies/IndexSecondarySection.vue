@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row w-full mt-20 mb-64">
+  <div class="flex flex-col lg:flex-row w-full mt-20 mb-24 sm:mb-64">
 
     <!-- Todays Recommended -->
     <div class="w-full sm:w-2/3">
@@ -59,7 +59,7 @@
   <!-- Coming Soon -->
     <div class="mt-8 sm:mt-0 sm:w-1/3">
       <div class="sm:w-3/4 sm:ml-auto h-full">
-      <h2 class="text-3xl font-bold text-indigo-300 mb-8">// Upcoming Movies</h2>
+      <h2 class="text-3xl font-bold text-indigo-300 mb-12 sm:mb-8">// Upcoming Movies</h2>
   <!-- Mini movie -->
       <div v-for="movie in upcomingMovies" class="mini-movie mt-6">
         <div class="flex">
@@ -116,7 +116,7 @@ export default {
   },
   methods:{
     showMovie(movieId){
-     window.location.href = window.location.href + 'show/' + movieId;
+     window.location.href = window.location.href + 'movie/' + movieId;
     }
   }
 }

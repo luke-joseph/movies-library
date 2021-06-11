@@ -1961,7 +1961,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showMovie: function showMovie(movieId) {
-      window.location.href = window.location.href + 'show/' + movieId;
+      window.location.href = window.location.href + 'movie/' + movieId;
     }
   }
 });
@@ -20013,7 +20013,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex flex-col lg:flex-row w-full mt-20 mb-64" },
+    { staticClass: "flex flex-col lg:flex-row w-full mt-20 mb-24 sm:mb-64" },
     [
       _c(
         "div",
@@ -20132,7 +20132,9 @@ var render = function() {
           [
             _c(
               "h2",
-              { staticClass: "text-3xl font-bold text-indigo-300 mb-8" },
+              {
+                staticClass: "text-3xl font-bold text-indigo-300 mb-12 sm:mb-8"
+              },
               [_vm._v("// Upcoming Movies")]
             ),
             _vm._v(" "),
@@ -20226,10 +20228,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mt-16" }, [
-    _c("h2", { staticClass: "text-3xl font-bold text-indigo-300" }, [
-      _vm._v("// Popular Movies")
-    ]),
+  return _c("div", { staticClass: "mt-8 sm:mt-16" }, [
+    _c(
+      "h2",
+      { staticClass: "text-3xl font-bold text-indigo-300 leading-tight" },
+      [_vm._v("// Popular Movies")]
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -20252,14 +20256,20 @@ var render = function() {
           _c("a", { attrs: { href: "/movie/" + movie.id } }, [
             _c(
               "h3",
-              { staticClass: "text-3xl mt-2 tracking-wider hover:underline" },
+              {
+                staticClass:
+                  "text-4xl sm:text-3xl mt-2 sm:tracking-wider hover:underline text-white"
+              },
               [_vm._v(_vm._s(movie.original_title))]
             )
           ]),
           _vm._v(" "),
           _c(
             "p",
-            { staticClass: "mt-1 tracking-wide font-semibold text-gray-300" },
+            {
+              staticClass:
+                "mt-2 sm:mt-1 text-lg sm:text-base sm:tracking-wide font-semibold text-gray-300"
+            },
             [
               _vm._v(
                 _vm._s(movie.vote_average * 10 + "%") +
@@ -20269,9 +20279,11 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-            _vm._v(_vm._s(movie.genres))
-          ])
+          _c(
+            "p",
+            { staticClass: "text-sm mt-1 text-gray-400 text-lg sm:text-base" },
+            [_vm._v(_vm._s(movie.genres))]
+          )
         ])
       }),
       0
