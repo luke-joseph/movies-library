@@ -1969,7 +1969,16 @@ __webpack_require__.r(__webpack_exports__);
     searchResults: {
       type: Array,
       required: true
+    },
+    totalResults: {
+      type: Number,
+      required: true
     }
+  },
+  data: function data() {
+    return {
+      imageWidth: window.width < 769 ? 'w154' : 'w185'
+    };
   }
 });
 
@@ -20481,7 +20490,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-full lg:w-2/3 mt-8 sm:mt-16" },
+    { staticClass: "w-full xl:w-2/3 mt-8 sm:mt-16" },
     [
       _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
         _vm._v("// Search Results")
@@ -20490,9 +20499,7 @@ var render = function() {
       _vm.searchResults.length
         ? _c("p", { staticClass: "mb-10" }, [
             _vm._v(
-              "Your Search returned " +
-                _vm._s(_vm.searchResults.length) +
-                " results"
+              "Your search returned " + _vm._s(_vm.totalResults) + " results"
             )
           ])
         : _c("p", { staticClass: "mb-10" }, [
@@ -20504,19 +20511,25 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex flex-col sm:flex-row mb-8 bg-gray-900 p-6 rounded"
+              "flex flex-col sm:flex-row mb-8 sm:bg-gray-900 sm:p-6 sm:rounded"
           },
           [
             _c("img", {
               attrs: {
-                src: "https://image.tmdb.org/t/p/w185" + result.poster_path,
-                alt: result.original_title + " result poster"
+                src:
+                  "https://image.tmdb.org/t/p/" +
+                  _vm.imageWidth +
+                  result.poster_path,
+                alt: result.original_title + " poster"
               }
             }),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "result-info md:ml-6 md:mr-2 lg:ml-12 lg:mr-12" },
+              {
+                staticClass:
+                  "result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12"
+              },
               [
                 _c(
                   "h3",
@@ -20549,13 +20562,20 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 result.overview
-                  ? _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
-                      _vm._v(
-                        "\r\n            " +
-                          _vm._s(result.overview.substring(0, 240)) +
-                          "...\r\n          "
-                      )
-                    ])
+                  ? _c(
+                      "p",
+                      {
+                        staticClass:
+                          "hidden lg:block mt-4 text-gray-300 text-lg"
+                      },
+                      [
+                        _vm._v(
+                          "\r\n            " +
+                            _vm._s(result.overview.substring(0, 240)) +
+                            "...\r\n          "
+                        )
+                      ]
+                    )
                   : _c("p", { staticClass: "mt-4 text-gray-300 text-lg h-12" }),
                 _vm._v(" "),
                 _vm._m(0, true)
@@ -20573,7 +20593,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "trailer mt-10" }, [
+    return _c("div", { staticClass: "trailer mt-4 sm:mt-auto" }, [
       _c(
         "button",
         {
@@ -20744,7 +20764,7 @@ var render = function() {
                       attrs: {
                         src:
                           "https://image.tmdb.org/t/p/w92" + movie.poster_path,
-                        alt: movie.original_title + " film poster"
+                        alt: movie.original_title + " poster"
                       },
                       on: {
                         click: function($event) {
@@ -20853,7 +20873,7 @@ var render = function() {
               staticClass: "hover:opacity-75",
               attrs: {
                 src: "https://image.tmdb.org/t/p/w342" + movie.poster_path,
-                alt: movie.original_title + " film poster"
+                alt: movie.original_title + " poster"
               }
             })
           ]),
@@ -20923,7 +20943,7 @@ var render = function() {
       _c("img", {
         attrs: {
           src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
-          alt: _vm.movie.original_title + " movie poster"
+          alt: _vm.movie.original_title + " poster"
         }
       }),
       _vm._v(" "),
@@ -21066,7 +21086,7 @@ var render = function() {
                   staticClass: "hover:opacity-75 small-poster",
                   attrs: {
                     src: "https://image.tmdb.org/t/p/w92" + movie.poster_path,
-                    alt: movie.original_title + " movie poster"
+                    alt: movie.original_title + " poster"
                   }
                 })
               ])

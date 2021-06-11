@@ -68,7 +68,7 @@
 
             <img @click="showMovie(movie.id)"
             :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
-            :alt="movie.original_title + ' film poster'"
+            :alt="movie.original_title + ' poster'"
             class="hover:opacity-75 cursor-pointer small-poster">
 
           </div>

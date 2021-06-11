@@ -127,7 +127,9 @@ class MoviesController extends Controller
 
       });
 
-      return view('movies.search', compact('searchResults'));
+      $totalResults = $rawSearchMovies['total_results'];
+
+      return view('movies.search', compact('searchResults', 'totalResults'));
     }
 
 }

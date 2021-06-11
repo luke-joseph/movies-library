@@ -10,7 +10,7 @@
           <a :href="'/movie/show/' + movie.id">
 
             <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
-            :alt="movie.original_title + ' film poster'"
+            :alt="movie.original_title + ' poster'"
             class="hover:opacity-75">
 
           </a>
