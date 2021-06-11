@@ -31835,6 +31835,14 @@ video {
   min-width: 92px;
 }
 
+/* medium devices only */
+
+@media only screen and (min-width: 639px) and (max-width: 1023px){
+  .small-poster{
+    min-width: 180px;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

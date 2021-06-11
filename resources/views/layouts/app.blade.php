@@ -3,7 +3,7 @@
 
       @include('layouts.nav')
 
-      <div class="container mx-auto sm:mt-10 sm:mb-16 px-6 sm:px-0">
+      <div class="container mx-auto sm:mt-10 sm:mb-16 px-6 lg:px-0">
 
         @yield('content')
 

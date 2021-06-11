@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-1/4 pl-10">
+    <div class="w-full sm:w-1/4 sm:pl-10 mt-16 sm:mt-0">
 
       <h2 v-if="relatedMovies.length" class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
 

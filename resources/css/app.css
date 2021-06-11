@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.small-poster{
-  min-width: 92px;
-}
+
+  .small-poster{
+    min-width: 92px;
+  }
+
+/* medium devices only */
+@media only screen and (min-width: 639px) and (max-width: 1023px){
+
+  .small-poster{
+    min-width: 180px;
+  }
+
+ }

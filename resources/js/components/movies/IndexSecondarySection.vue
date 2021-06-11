@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col lg:flex-row w-full mt-20 mb-24 sm:mb-64">
+  <div class="flex flex-col lg:flex-row w-full mt-20 mb-24 lg:mb-64">
 
     <!-- Todays Recommended -->
-    <div class="w-full sm:w-2/3">
+    <div class="w-full lg:w-2/3">
 
       <h2 class="text-3xl font-bold text-indigo-300">// Today's Recommended Movies</h2>
 
@@ -57,8 +57,8 @@
     </div>
 
   <!-- Coming Soon -->
-    <div class="mt-8 sm:mt-0 sm:w-1/3">
-      <div class="sm:w-3/4 sm:ml-auto h-full">
+    <div class="mt-8 lg:mt-0 lg:w-1/3">
+      <div class="lg:w-3/4 lg:ml-auto h-full">
       <h2 class="text-3xl font-bold text-indigo-300 mb-12 sm:mb-8">// Upcoming Movies</h2>
   <!-- Mini movie -->
       <div v-for="movie in upcomingMovies" class="mini-movie mt-6">
@@ -77,13 +77,13 @@
 
             <a :href="'/movie/' + movie.id">
 
-              <h3 class="text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
+              <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
             </a>
 
-            <p class="text-sm mt-1 text-gray-400">{{ movie.genres }}</p>
+            <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400">{{ movie.genres }}</p>
 
-            <p class="mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
+            <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
 
           </div>
 

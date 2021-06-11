@@ -20013,11 +20013,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex flex-col lg:flex-row w-full mt-20 mb-24 sm:mb-64" },
+    { staticClass: "flex flex-col lg:flex-row w-full mt-20 mb-24 lg:mb-64" },
     [
       _c(
         "div",
-        { staticClass: "w-full sm:w-2/3" },
+        { staticClass: "w-full lg:w-2/3" },
         [
           _c("h2", { staticClass: "text-3xl font-bold text-indigo-300" }, [
             _vm._v("// Today's Recommended Movies")
@@ -20125,10 +20125,10 @@ var render = function() {
         2
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "mt-8 sm:mt-0 sm:w-1/3" }, [
+      _c("div", { staticClass: "mt-8 lg:mt-0 lg:w-1/3" }, [
         _c(
           "div",
-          { staticClass: "sm:w-3/4 sm:ml-auto h-full" },
+          { staticClass: "lg:w-3/4 lg:ml-auto h-full" },
           [
             _c(
               "h2",
@@ -20163,19 +20163,28 @@ var render = function() {
                       _c(
                         "h3",
                         {
-                          staticClass: "text-xl tracking-wider hover:underline"
+                          staticClass:
+                            "text-xl md:text-4xl lg:text-xl tracking-wider hover:underline"
                         },
                         [_vm._v(_vm._s(movie.original_title))]
                       )
                     ]),
                     _vm._v(" "),
-                    _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
-                      _vm._v(_vm._s(movie.genres))
-                    ]),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400"
+                      },
+                      [_vm._v(_vm._s(movie.genres))]
+                    ),
                     _vm._v(" "),
                     _c(
                       "p",
-                      { staticClass: "mt-1 font-semibold text-gray-300" },
+                      {
+                        staticClass:
+                          "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300"
+                      },
                       [_vm._v(_vm._s(movie.release_date))]
                     )
                   ])
@@ -20313,8 +20322,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w-3/4" }, [
-    _c("div", { staticClass: "flex" }, [
+  return _c("div", { staticClass: "w-full sm:w-3/4" }, [
+    _c("div", { staticClass: "flex flex-col sm:flex-row" }, [
       _c("img", {
         attrs: {
           src: "https://image.tmdb.org/t/p/w342/" + _vm.movie.poster_path,
@@ -20322,10 +20331,15 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "movie-info mx-12" }, [
-        _c("h3", { staticClass: "text-4xl tracking-wider" }, [
-          _vm._v(_vm._s(_vm.movie.original_title))
-        ]),
+      _c("div", { staticClass: "movie-info sm:mx-12" }, [
+        _c(
+          "h3",
+          {
+            staticClass:
+              "text-4xl mt-2 sm:mt-0 sm:tracking-wider hover:underline text-white"
+          },
+          [_vm._v(_vm._s(_vm.movie.original_title))]
+        ),
         _vm._v(" "),
         _c(
           "p",
@@ -20400,7 +20414,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex w-full mt-20 mb-32" },
+    { staticClass: "flex flex-col sm:flex-row w-full mt-8 sm:mt-20 mb-32" },
     [
       _c("show-movie", { attrs: { movie: _vm.movie } }),
       _vm._v(" "),
@@ -20436,7 +20450,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-1/4 pl-10" },
+    { staticClass: "w-full sm:w-1/4 sm:pl-10 mt-16 sm:mt-0" },
     [
       _vm.relatedMovies.length
         ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
