@@ -1969,6 +1969,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     searchResults: {
@@ -1984,6 +1990,11 @@ __webpack_require__.r(__webpack_exports__);
     return {
       imageWidth: window.width < 769 ? 'w154' : 'w185'
     };
+  },
+  methods: {
+    showMovie: function showMovie(movieId) {
+      window.location.href = 'show/' + movieId;
+    }
   }
 });
 
@@ -20521,12 +20532,18 @@ var render = function() {
           [
             result.poster_path
               ? _c("img", {
+                  staticClass: "cursor-pointer",
                   attrs: {
                     src:
                       "https://image.tmdb.org/t/p/" +
                       _vm.imageWidth +
                       result.poster_path,
                     alt: result.original_title + " poster"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.showMovie(result.id)
+                    }
                   }
                 })
               : _c("img", {
@@ -20534,6 +20551,11 @@ var render = function() {
                     src:
                       "https://via.placeholder.com/" + _vm.imageWidth.slice(1),
                     alt: result.original_title + " no poster found"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.showMovie(result.id)
+                    }
                   }
                 }),
             _vm._v(" "),
@@ -20544,14 +20566,16 @@ var render = function() {
                   "result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12"
               },
               [
-                _c(
-                  "h3",
-                  {
-                    staticClass:
-                      "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
-                  },
-                  [_vm._v(_vm._s(result.original_title))]
-                ),
+                _c("a", { attrs: { href: "/movie/show/" + result.id } }, [
+                  _c(
+                    "h3",
+                    {
+                      staticClass:
+                        "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
+                    },
+                    [_vm._v(_vm._s(result.original_title))]
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "p",

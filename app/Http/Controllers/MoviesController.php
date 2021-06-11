@@ -36,7 +36,7 @@ class MoviesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $movie
+     * @param  int  $movieId
      * @return View
      */
     public function show($movieId)
@@ -51,9 +51,9 @@ class MoviesController extends Controller
     }
 
     /**
-     * return a listing of searched movies
+     * return a listing of searched movies and amount of total results
      *
-     * @return Collection
+     * @return Array
      */
     public function search()
     {

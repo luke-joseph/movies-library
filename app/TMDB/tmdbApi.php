@@ -22,7 +22,9 @@ class tmdbApi
 
         return collect($movie)->merge([
 
-          'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+          'release_date' => array_key_exists('release_date', $movie) ?
+          Carbon::create($movie['release_date'])->toFormattedDateString()
+          : null,
 
           'genres' => GenreIdsToString::convert($movie['genre_ids'])
 
@@ -48,7 +50,9 @@ class tmdbApi
 
     return $singleMovie->merge([
 
-      'release_date' => Carbon::create($singleMovie['release_date'])->toFormattedDateString(),
+      'release_date' => array_key_exists('release_date', $singleMovie) ?
+      Carbon::create($singleMovie['release_date'])->toFormattedDateString()
+      : null,
 
       'genres' => GenreIdsToString::convert($genresArray)
 
@@ -66,8 +70,13 @@ class tmdbApi
     ->map(function ($movie) {
 
         return collect($movie)->merge([
-          'release_date' => Carbon::create($movie['release_date'])->toFormattedDateString(),
+
+          'release_date' => array_key_exists('release_date', $movie) ?
+          Carbon::create($movie['release_date'])->toFormattedDateString()
+          : null,
+
           'genres' => GenreIdsToString::convert($movie['genre_ids'])
+
         ]);
 
     });

@@ -11,16 +11,22 @@
       <div v-for="result in searchResults" class="flex flex-col sm:flex-row mb-8 sm:bg-gray-900 sm:p-6 sm:rounded">
 
         <!-- Poster Exists -->
-        <img v-if="result.poster_path" :src="'https://image.tmdb.org/t/p/' + imageWidth + result.poster_path"
-        :alt="result.original_title + ' poster'">
+        <img @click="showMovie(result.id)"
+        v-if="result.poster_path"
+        :src="'https://image.tmdb.org/t/p/' + imageWidth + result.poster_path"
+        :alt="result.original_title + ' poster'"
+        class="cursor-pointer">
 
         <!-- Show placeholder -->
-        <img v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1)"
+        <img @click="showMovie(result.id)" v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1)"
         :alt="result.original_title + ' no poster found'">
 
         <div class="result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
 
-          <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ result.original_title }}</h3>
+          <a :href="'/movie/show/' + result.id">
+            <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ result.original_title }}</h3>
+          </a>
+
 
           <p class="mt-4 tracking-wide font-semibold text-gray-300 text-xl">
             {{ (result.vote_average * 10) + '%' }}
@@ -66,6 +72,11 @@ export default {
   data(){
     return{
       imageWidth: window.width < 769 ? 'w154' : 'w185'
+    }
+  },
+  methods:{
+    showMovie(movieId){
+     window.location.href = 'show/' + movieId;
     }
   }
 }
