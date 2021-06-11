@@ -105,7 +105,7 @@ export default {
       required: true
     },
     upcomingMovies:{
-      type: Object,
+      type: Array,
       required: true
     }
   },
