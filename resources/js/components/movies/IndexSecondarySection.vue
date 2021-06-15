@@ -45,11 +45,6 @@
             {{ movie.overview }}
           </p>
 
-          <div class="trailer mt-6">
-            <button class="uppercase text-base font-semibold tracking-wider bg-indigo-700 px-4 py-2 rounded">
-              Watch Trailer
-            </button>
-          </div>
         </div>
 
       </div>

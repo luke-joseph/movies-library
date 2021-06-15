@@ -27,11 +27,10 @@
             {{ movie.overview }}
           </p>
 
-          <div class="trailer mt-10">
-            <button class="uppercase text-lg font-semibold tracking-wider bg-indigo-700 px-6 py-3 rounded">
-              Watch Trailer
-            </button>
-          </div>
+          <trailer-button
+          v-if="movie.videos.results.length"
+          :videos="movie.videos.results" />
+          
         </div>
 
       </div>

@@ -3,6 +3,7 @@ require('./bootstrap');
 //general
 Vue.component('nav-bar', require('./components/NavBar.vue').default);
 Vue.component('search-results', require('./components/SearchResults.vue').default);
+Vue.component('trailer-button', require('./components/TrailerButton.vue').default);
 //movies
 Vue.component('popular-movies', require('./components/movies/PopularMovies.vue').default);
 Vue.component('index-secondary-section', require('./components/movies/IndexSecondarySection.vue').default);

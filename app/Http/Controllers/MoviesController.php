@@ -42,7 +42,9 @@ class MoviesController extends Controller
     public function show($movieId)
     {
 
-      $singleMovie = tmdbApi::getSingleMovie("movie/" . $movieId);
+      $singleMovie = tmdbApi::getSingleMovie(
+        "movie/" . $movieId . '?append_to_response=videos'
+      );
 
       $relatedMovies = tmdbApi::getMovies("movie/" . $movieId . "/similar", 4);
 
