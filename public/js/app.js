@@ -2093,6 +2093,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     searchResults: {
@@ -21303,7 +21313,7 @@ var render = function() {
           [
             result.poster_path
               ? _c("img", {
-                  staticClass: "cursor-pointer",
+                  staticClass: "cursor-pointer w-1/2 sm:w-auto",
                   attrs: {
                     src:
                       "https://image.tmdb.org/t/p/" +
@@ -21344,30 +21354,44 @@ var render = function() {
                     "h3",
                     {
                       staticClass:
-                        "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white hover:underline"
+                        "text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white hover:underline"
                     },
                     [_vm._v(_vm._s(result.original_title))]
                   )
                 ]),
                 _vm._v(" "),
+                _c("p", {
+                  staticClass:
+                    "lg:hidden tracking-wide font-semibold text-gray-300 text-base sm:text-xl flex flex-col"
+                }),
+                _c("p", { staticClass: "text-gray-400" }, [
+                  _vm._v(_vm._s(result.genres))
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    _vm._s(result.vote_average * 10 + "%") +
+                      " | " +
+                      _vm._s(result.release_date)
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p"),
+                _vm._v(" "),
                 _c(
                   "p",
                   {
                     staticClass:
-                      "mt-4 tracking-wide font-semibold text-gray-300 text-xl"
+                      "hidden lg:block mt-4 tracking-wide font-semibold text-gray-300 text-base sm:text-xl"
                   },
                   [
-                    _vm._v(
-                      "\r\n            " +
-                        _vm._s(result.vote_average * 10 + "%") +
-                        "\r\n            |\r\n            "
-                    ),
-                    _c("span", [_vm._v(_vm._s(result.genres))]),
-                    _vm._v(
-                      "\r\n            | " +
-                        _vm._s(result.release_date) +
-                        "\r\n          "
-                    )
+                    _c("span", [
+                      _vm._v(_vm._s(result.vote_average * 10 + "%") + " |")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [_vm._v(_vm._s(result.genres) + " | ")]),
+                    _vm._v(" "),
+                    _c("span", [_vm._v(_vm._s(result.release_date))])
                   ]
                 ),
                 _vm._v(" "),
