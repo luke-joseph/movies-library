@@ -2087,8 +2087,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      showModal: false
+      showModal: false,
+      trailerUrl: null
     };
+  },
+  methods: {
+    showTrailer: function showTrailer() {
+      // show video modal on medium plus screens
+      if (window.innerWidth > 639) {
+        this.showModal = true;
+      } else {
+        //Redirect for mobiles
+        window.open(this.trailerUrl);
+      }
+    }
+  },
+  mounted: function mounted() {
+    if (this.videos.length) {
+      if (this.videos[0]['site'] === 'YouTube') {
+        this.trailerUrl = 'https://www.youtube.com/embed/' + this.videos[0]['key'];
+      }
+    }
   }
 });
 
@@ -21145,11 +21164,7 @@ var render = function() {
         {
           staticClass:
             "uppercase text-lg font-semibold tracking-wider bg-indigo-700 px-6 py-3 rounded",
-          on: {
-            click: function($event) {
-              _vm.showModal = true
-            }
-          }
+          on: { click: _vm.showTrailer }
         },
         [_vm._v("\n    Watch Trailer\n  ")]
       ),

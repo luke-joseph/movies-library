@@ -19,7 +19,7 @@ class tmdbApi
 
     /*
     /* return collection from the results & format / overwrite release data &
-    /* genres to readable format
+    /* genres to readable formats
     */
     return collect($fullResponse['results'])
     ->map(function ($movie) {
