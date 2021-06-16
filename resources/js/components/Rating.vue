@@ -1,6 +1,6 @@
 <template>
   <div class="flex-wrapper">
-  <div class="single-chart w-1/3 justify-around z-50">
+  <div class="single-chart justify-around z-50">
     <svg viewBox="0 0 36 36" class="circular-chart green block w-12 h-12">
       <path class="circle-bg"
         d="M18 2.0845

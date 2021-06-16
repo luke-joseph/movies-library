@@ -2010,8 +2010,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2433,6 +2431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -21260,12 +21259,6 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "a",
-                    { staticClass: "text-white mt-1", attrs: { href: "#" } },
-                    [_vm._v("TV shows")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
                     {
                       staticClass: "text-white mt-1 mb-4",
                       attrs: { href: "#" }
@@ -21401,15 +21394,6 @@ var staticRenderFns = [
         _c(
           "a",
           {
-            staticClass: "text-white mt-1 sm:mt-0 sm:ml-6",
-            attrs: { href: "#" }
-          },
-          [_vm._v("TV shows")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
             staticClass: "text-white mt-1 sm:mt-0 sm:ml-6 mb-6 sm:mb-0",
             attrs: { href: "#" }
           },
@@ -21442,7 +21426,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "flex-wrapper" }, [
-    _c("div", { staticClass: "single-chart w-1/3 justify-around z-50" }, [
+    _c("div", { staticClass: "single-chart justify-around z-50" }, [
       _c(
         "svg",
         {
@@ -21944,7 +21928,7 @@ var render = function() {
           [
             _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
               _c("img", {
-                staticClass: "hover:opacity-75 rounded",
+                staticClass: "hover:opacity-75 rounded w-4/5 sm:w-auto",
                 attrs: {
                   src: "https://image.tmdb.org/t/p/w342" + movie.poster_path,
                   alt: movie.original_title + " poster"
@@ -22027,68 +22011,74 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w-full lg:w-3/4" }, [
-    _c("div", { staticClass: "flex flex-col sm:flex-row" }, [
-      _vm.movie.poster_path
-        ? _c("img", {
-            staticClass: "cursor-pointer",
-            attrs: {
-              src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
-              alt: _vm.movie.original_title + " poster"
-            }
-          })
-        : _c("img", {
-            attrs: {
-              src: "https://via.placeholder.com/342",
-              alt: _vm.movie.original_title + " no poster found"
-            }
-          }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12" },
-        [
-          _c(
-            "h3",
-            {
-              staticClass: "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
-            },
-            [_vm._v(_vm._s(_vm.movie.original_title))]
-          ),
-          _vm._v(" "),
-          _c(
-            "p",
-            {
-              staticClass:
-                "mt-4 tracking-wide font-semibold text-gray-300 text-xl"
-            },
-            [
+    _c(
+      "div",
+      { staticClass: "flex flex-col sm:flex-row" },
+      [
+        _vm.movie.poster_path
+          ? _c("img", {
+              staticClass: "cursor-pointer w-4/5 sm:w-auto rounded",
+              attrs: {
+                src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
+                alt: _vm.movie.original_title + " poster"
+              }
+            })
+          : _c("img", {
+              staticClass: "rounded",
+              attrs: {
+                src: "https://via.placeholder.com/342",
+                alt: _vm.movie.original_title + " no poster found"
+              }
+            }),
+        _vm._v(" "),
+        _c("rating", {
+          staticClass: "-mt-8 ml-1 lg:-ml-8 lg:-mt-4 lg:-mb-0",
+          attrs: { ratingPercent: _vm.movie.vote_average * 10 }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12" },
+          [
+            _c(
+              "h3",
+              {
+                staticClass:
+                  "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
+              },
+              [_vm._v(_vm._s(_vm.movie.original_title))]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass:
+                  "mt-4 tracking-wide font-semibold text-gray-300 text-xl"
+              },
+              [
+                _c("span", [_vm._v(_vm._s(_vm.movie.genres) + " |")]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(_vm.movie.release_date))])
+              ]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
               _vm._v(
                 "\r\n            " +
-                  _vm._s(_vm.movie.vote_average * 10 + "%") +
-                  "\r\n            |\r\n            "
-              ),
-              _c("span", [_vm._v(_vm._s(_vm.movie.genres))]),
-              _vm._v(
-                "\r\n            | " +
-                  _vm._s(_vm.movie.release_date) +
+                  _vm._s(_vm.movie.overview) +
                   "\r\n          "
               )
-            ]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
-            _vm._v(
-              "\r\n            " + _vm._s(_vm.movie.overview) + "\r\n          "
-            )
-          ]),
-          _vm._v(" "),
-          _vm.movie.videos
-            ? _c("trailer-button", { attrs: { video: _vm.movie.videos[0] } })
-            : _vm._e()
-        ],
-        1
-      )
-    ])
+            ]),
+            _vm._v(" "),
+            _vm.movie.videos
+              ? _c("trailer-button", { attrs: { video: _vm.movie.videos[0] } })
+              : _vm._e()
+          ],
+          1
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
