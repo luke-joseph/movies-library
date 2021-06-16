@@ -43,12 +43,6 @@
           <p v-else class="mt-4 text-gray-300 text-lg h-12">
           </p>
 
-          <div class="trailer mt-4 sm:mt-auto">
-            <button class="uppercase text-base font-semibold tracking-wider bg-indigo-700 px-4 py-2 rounded">
-              Watch Trailer
-            </button>
-          </div>
-
         </div>
 
       </div>

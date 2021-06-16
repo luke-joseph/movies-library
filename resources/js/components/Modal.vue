@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-            <iframe v-if="videos[0]['site'] === 'YouTube'" width="560" height="315" :src="'https://www.youtube.com/embed/' + videos[0]['key']"
+            <iframe v-if="videoSite === 'YouTube'" width="560" height="315" :src="trailerUrl"
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
             </iframe>
@@ -37,8 +37,12 @@ export default {
       type: Boolean,
       required: true
     },
-    videos:{
-      type: Array,
+    trailerUrl:{
+      type: String,
+      required: true
+    },
+    videoSite:{
+      type: String,
       required: true
     }
   },

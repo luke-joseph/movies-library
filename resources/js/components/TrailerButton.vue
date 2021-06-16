@@ -6,8 +6,8 @@
       Watch Trailer
     </button>
 
-    <modal :show-modal="showModal" :videos="videos"
-    @hideModal="showModal = false" />
+    <modal :show-modal="showModal" :videoSite="video.site"
+    :trailerUrl="trailerUrl" @hideModal="showModal = false" />
 
   </div>
 </template>
@@ -15,8 +15,8 @@
 <script>
 export default {
   props:{
-    videos:{
-      type: Array,
+    video:{
+      type: Object,
       required: true
     }
   },
@@ -30,20 +30,20 @@ export default {
     showTrailer(){
       // show video modal on medium plus screens
       if (window.innerWidth > 639) {
+
         this.showModal = true;
+        
       } else {
-       //Redirect for mobiles
-       window.open(this.trailerUrl);
+
+       window.open(this.trailerUrl.replace('embed/','watch?v='));
+
       }
     }
   },
   mounted(){
-    if (this.videos.length) {
-      if (this.videos[0]['site'] === 'YouTube') {
-        this.trailerUrl = 'https://www.youtube.com/embed/' + this.videos[0]['key']
+      if (this.video.site === 'YouTube') {
+        this.trailerUrl = 'https://www.youtube.com/embed/' + this.video.key
       }
-
-    }
   }
 }
 </script>

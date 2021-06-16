@@ -1883,8 +1883,12 @@ __webpack_require__.r(__webpack_exports__);
       type: Boolean,
       required: true
     },
-    videos: {
-      type: Array,
+    trailerUrl: {
+      type: String,
+      required: true
+    },
+    videoSite: {
+      type: String,
       required: true
     }
   }
@@ -2022,12 +2026,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     searchResults: {
@@ -2080,8 +2078,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    videos: {
-      type: Array,
+    video: {
+      type: Object,
       required: true
     }
   },
@@ -2097,16 +2095,13 @@ __webpack_require__.r(__webpack_exports__);
       if (window.innerWidth > 639) {
         this.showModal = true;
       } else {
-        //Redirect for mobiles
-        window.open(this.trailerUrl);
+        window.open(this.trailerUrl.replace('embed/', 'watch?v='));
       }
     }
   },
   mounted: function mounted() {
-    if (this.videos.length) {
-      if (this.videos[0]['site'] === 'YouTube') {
-        this.trailerUrl = 'https://www.youtube.com/embed/' + this.videos[0]['key'];
-      }
+    if (this.video.site === 'YouTube') {
+      this.trailerUrl = 'https://www.youtube.com/embed/' + this.video.key;
     }
   }
 });
@@ -20755,14 +20750,12 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm.videos[0]["site"] === "YouTube"
+                _vm.videoSite === "YouTube"
                   ? _c("iframe", {
                       attrs: {
                         width: "560",
                         height: "315",
-                        src:
-                          "https://www.youtube.com/embed/" +
-                          _vm.videos[0]["key"],
+                        src: _vm.trailerUrl,
                         title: "YouTube video player",
                         frameborder: "0",
                         allow:
@@ -21104,9 +21097,7 @@ var render = function() {
                         )
                       ]
                     )
-                  : _c("p", { staticClass: "mt-4 text-gray-300 text-lg h-12" }),
-                _vm._v(" "),
-                _vm._m(0, true)
+                  : _c("p", { staticClass: "mt-4 text-gray-300 text-lg h-12" })
               ]
             )
           ]
@@ -21116,23 +21107,7 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "trailer mt-4 sm:mt-auto" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "uppercase text-base font-semibold tracking-wider bg-indigo-700 px-4 py-2 rounded"
-        },
-        [_vm._v("\r\n              Watch Trailer\r\n            ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -21170,7 +21145,11 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("modal", {
-        attrs: { "show-modal": _vm.showModal, videos: _vm.videos },
+        attrs: {
+          "show-modal": _vm.showModal,
+          videoSite: _vm.video.site,
+          trailerUrl: _vm.trailerUrl
+        },
         on: {
           hideModal: function($event) {
             _vm.showModal = false
@@ -21553,10 +21532,8 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm.movie.videos.results.length
-            ? _c("trailer-button", {
-                attrs: { videos: _vm.movie.videos.results }
-              })
+          _vm.movie.videos
+            ? _c("trailer-button", { attrs: { video: _vm.movie.videos[0] } })
             : _vm._e()
         ],
         1

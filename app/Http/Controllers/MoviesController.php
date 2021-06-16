@@ -34,7 +34,7 @@ class MoviesController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified movie.
      *
      * @param  int  $movieId
      * @return View

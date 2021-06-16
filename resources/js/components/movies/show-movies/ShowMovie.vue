@@ -28,9 +28,9 @@
           </p>
 
           <trailer-button
-          v-if="movie.videos.results.length"
-          :videos="movie.videos.results" />
-          
+          v-if="movie.videos"
+          :video="movie.videos[0]" />
+
         </div>
 
       </div>
