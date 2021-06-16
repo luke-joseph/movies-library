@@ -6,7 +6,7 @@
       Watch Trailer
     </button>
 
-    <modal :show-modal="showModal" :videoSite="video.site"
+    <modal :show-modal="showModal" :videoSite="video.site" :name="video.name"
     :trailerUrl="trailerUrl" @hideModal="showModal = false" />
 
   </div>
@@ -32,7 +32,7 @@ export default {
       if (window.innerWidth > 639) {
 
         this.showModal = true;
-        
+
       } else {
 
        window.open(this.trailerUrl.replace('embed/','watch?v='));
@@ -40,7 +40,7 @@ export default {
       }
     }
   },
-  mounted(){
+  created(){
       if (this.video.site === 'YouTube') {
         this.trailerUrl = 'https://www.youtube.com/embed/' + this.video.key
       }

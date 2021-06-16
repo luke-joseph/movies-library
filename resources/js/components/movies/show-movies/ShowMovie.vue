@@ -12,7 +12,7 @@
         <img v-else src="https://via.placeholder.com/342"
         :alt="movie.original_title + ' no poster found'">
 
-        <div class="movie-info md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
+        <div class="movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12">
 
           <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ movie.original_title }}</h3>
 

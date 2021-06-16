@@ -1872,15 +1872,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     showModal: {
       type: Boolean,
+      required: true
+    },
+    name: {
+      type: String,
       required: true
     },
     trailerUrl: {
@@ -2176,7 +2175,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
-  mounted: function mounted() {
+  created: function created() {
     if (this.video.site === 'YouTube') {
       this.trailerUrl = 'https://www.youtube.com/embed/' + this.video.key;
     }
@@ -20785,47 +20784,51 @@ var render = function() {
           _c("div", { staticClass: "modal-wrapper" }, [
             _c(
               "div",
-              {
-                staticClass: "modal-container flex flex-col bg-gray-800 rounded"
-              },
+              { staticClass: "modal-container flex flex-col bg-black rounded" },
               [
-                _c("div", { staticClass: "flex modal-heading mb-4" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "modal-default-button text-red-400 rounded font-bold ml-auto text-xl",
-                      on: {
-                        click: function($event) {
-                          return _vm.$emit("hideModal")
-                        }
-                      }
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "icon-close w-8 h-8",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 24 24"
+                _c(
+                  "div",
+                  { staticClass: "flex items-center modal-heading mb-4" },
+                  [
+                    _c("span", [_vm._v(_vm._s(_vm.name))]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "modal-default-button text-red-400 rounded font-bold ml-auto text-xl",
+                        on: {
+                          click: function($event) {
+                            return _vm.$emit("hideModal")
                           }
-                        },
-                        [
-                          _c("path", {
-                            staticClass: "secondary",
-                            staticStyle: { fill: "#F87171" },
+                        }
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "icon-close w-8 h-8",
                             attrs: {
-                              "fill-rule": "evenodd",
-                              d:
-                                "M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 24 24"
                             }
-                          })
-                        ]
-                      )
-                    ]
-                  )
-                ]),
+                          },
+                          [
+                            _c("path", {
+                              staticClass: "secondary",
+                              staticStyle: { fill: "#F87171" },
+                              attrs: {
+                                "fill-rule": "evenodd",
+                                d:
+                                  "M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _vm.videoSite === "YouTube"
                   ? _c("iframe", {
@@ -20840,23 +20843,7 @@ var render = function() {
                         allowfullscreen: ""
                       }
                     })
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("div", { staticClass: "modal-heading mt-4" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "modal-default-button bg-indigo-700 rounded px-4 py-2 font-bold",
-                      on: {
-                        click: function($event) {
-                          return _vm.$emit("hideModal")
-                        }
-                      }
-                    },
-                    [_vm._v("\n                Close\n              ")]
-                  )
-                ])
+                  : _vm._e()
               ]
             )
           ])
@@ -21461,6 +21448,7 @@ var render = function() {
         attrs: {
           "show-modal": _vm.showModal,
           videoSite: _vm.video.site,
+          name: _vm.video.name,
           trailerUrl: _vm.trailerUrl
         },
         on: {
@@ -21808,7 +21796,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "movie-info md:ml-6 md:mr-2 lg:ml-12 lg:mr-12" },
+        { staticClass: "movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12" },
         [
           _c(
             "h3",

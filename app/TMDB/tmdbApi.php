@@ -71,7 +71,7 @@ class tmdbApi
 
       'genres' => GenreIdsToString::convert($genresArray),
 
-      'videos' => isset($trailers) ? $trailers : null
+      'videos' => isset($trailers) ? array_values($trailers) : null
 
     ]);
 

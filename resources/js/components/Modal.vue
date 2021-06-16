@@ -3,9 +3,10 @@
   <div v-if="showModal" id="modal-template">
       <div class="modal-mask">
         <div class="modal-wrapper">
-          <div class="modal-container flex flex-col bg-gray-800 rounded">
+          <div class="modal-container flex flex-col bg-black rounded">
 
-            <div class="flex modal-heading mb-4">
+            <div class="flex items-center modal-heading mb-4">
+                <span>{{ name }}</span>
                 <button class="modal-default-button text-red-400 rounded font-bold ml-auto text-xl" @click="$emit('hideModal')">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-close w-8 h-8">
                     <path class="secondary" style="fill: #F87171;" fill-rule="evenodd" d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"/>
@@ -18,12 +19,6 @@
             allowfullscreen>
             </iframe>
 
-            <div class="modal-heading mt-4">
-                <button class="modal-default-button bg-indigo-700 rounded px-4 py-2 font-bold" @click="$emit('hideModal')">
-                  Close
-                </button>
-            </div>
-
           </div>
         </div>
       </div>
@@ -35,6 +30,10 @@ export default {
   props:{
     showModal:{
       type: Boolean,
+      required: true
+    },
+    name:{
+      type: String,
       required: true
     },
     trailerUrl:{
