@@ -11,19 +11,27 @@
 
             <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
             :alt="movie.original_title + ' poster'"
-            class="hover:opacity-75">
+            class="hover:opacity-75 rounded">
 
           </a>
+
+          <rating :ratingPercent="movie.vote_average * 10" class="-mt-8 ml-1"/>
 
           <a :href="'/movie/show/' + movie.id">
 
-            <h3 class="text-4xl sm:text-3xl mt-2 sm:tracking-wider hover:underline text-white">{{ movie.original_title }}</h3>
+            <h3 class="text-4xl sm:text-3xl mt-1 sm:tracking-wider hover:underline text-white ml-2">
+              {{ movie.original_title }}
+            </h3>
 
           </a>
 
-          <p class="mt-2 sm:mt-1 text-lg sm:text-base sm:tracking-wide font-semibold text-gray-300">{{ (movie.vote_average * 10) + '%' }} | {{ movie.release_date }}</p>
+          <p class="mt-2 sm:mt-1 text-lg sm:text-base sm:tracking-wide font-semibold text-gray-300 ml-2">
+            {{ movie.genres }}
+          </p>
 
-          <p class="text-sm mt-1 text-gray-400 text-lg sm:text-base">{{ movie.genres }}</p>
+          <p class="text-sm mt-1 text-gray-400 text-lg sm:text-base ml-2">
+            {{movie.release_date }}
+          </p>
 
       </div>
 
