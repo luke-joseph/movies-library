@@ -13,10 +13,14 @@ class tmdbApi
 {
   public static function getMovies($uri, $amount)
   {
-
+    // get the whole response
     $fullResponse = Http::withToken(config('services.tmdb.key'))
     ->get(config('services.tmdb.api_url') . $uri);
 
+    /*
+    /* return collection from the results & format / overwrite release data &
+    /* genres to readable format
+    */
     return collect($fullResponse['results'])
     ->map(function ($movie) {
 
@@ -51,7 +55,7 @@ class tmdbApi
 
     return $singleMovie->merge([
 
-      'release_date' => array_key_exists('release_date', $singleMovie) ?
+      'release_date' => isset($singleMovie['release_date']) ?
       Carbon::create($singleMovie['release_date'])->toFormattedDateString()
       : null,
 
