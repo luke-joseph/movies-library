@@ -21043,119 +21043,111 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", {}, [
-    _c(
-      "nav",
-      { staticClass: "hidden lg:block w-full bg-gray-900 px-6 lg:px-0" },
-      [
-        _c(
-          "div",
-          {
-            staticClass:
-              "nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between"
-          },
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "hidden sm:block sm:w-1/3" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "search flex flex-col sm:flex-row sm:flex-wrap items-center w-full mx-auto rounded p-4 justify-between"
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "w-5/6 sm:w-full mx-auto sm:mx-0 lg:w-1/2 mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm mr-auto lg:mr-0"
-                    },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "flex w-full rounded bg-white" },
-                        [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.searchQuery,
-                                expression: "searchQuery"
-                              }
-                            ],
-                            staticClass:
-                              "w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none",
-                            attrs: {
-                              type: "text",
-                              name: "movie_search",
-                              value: "",
-                              placeholder: "Search Movies..."
-                            },
-                            domProps: { value: _vm.searchQuery },
-                            on: {
-                              keydown: function($event) {
-                                if (
-                                  !$event.type.indexOf("key") &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key,
-                                    "Enter"
-                                  )
-                                ) {
-                                  return null
-                                }
-                                return _vm.searchMovies.apply(null, arguments)
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.searchQuery = $event.target.value
-                              }
+    _c("nav", { staticClass: "hidden lg:block w-full bg-gray-900 px-6" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between"
+        },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "hidden sm:block sm:w-1/4" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "search flex flex-col sm:flex-row sm:flex-wrap items-center w-full mx-auto rounded p-4 justify-between"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "w-full mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm ml-auto"
+                  },
+                  [
+                    _c("div", { staticClass: "flex w-full rounded bg-white" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.searchQuery,
+                            expression: "searchQuery"
+                          }
+                        ],
+                        staticClass:
+                          "w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none",
+                        attrs: {
+                          type: "text",
+                          name: "movie_search",
+                          value: "",
+                          placeholder: "Search Movies..."
+                        },
+                        domProps: { value: _vm.searchQuery },
+                        on: {
+                          keydown: function($event) {
+                            if (
+                              !$event.type.indexOf("key") &&
+                              _vm._k(
+                                $event.keyCode,
+                                "enter",
+                                13,
+                                $event.key,
+                                "Enter"
+                              )
+                            ) {
+                              return null
                             }
+                            return _vm.searchMovies.apply(null, arguments)
+                          },
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.searchQuery = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "svg",
+                        {
+                          staticClass:
+                            "cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search",
+                          attrs: {
+                            "data-testid": "search-icon",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 24 24"
+                          },
+                          on: { click: _vm.searchMovies }
+                        },
+                        [
+                          _c("circle", {
+                            staticStyle: { fill: "#F7F5F5" },
+                            attrs: { cx: "10", cy: "10", r: "7" }
                           }),
                           _vm._v(" "),
-                          _c(
-                            "svg",
-                            {
-                              staticClass:
-                                "cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search",
-                              attrs: {
-                                "data-testid": "search-icon",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                viewBox: "0 0 24 24"
-                              },
-                              on: { click: _vm.searchMovies }
-                            },
-                            [
-                              _c("circle", {
-                                staticStyle: { fill: "#F7F5F5" },
-                                attrs: { cx: "10", cy: "10", r: "7" }
-                              }),
-                              _vm._v(" "),
-                              _c("path", {
-                                staticStyle: { fill: "#A6A9AB" },
-                                attrs: {
-                                  d:
-                                    "M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
-                                }
-                              })
-                            ]
-                          )
+                          _c("path", {
+                            staticStyle: { fill: "#A6A9AB" },
+                            attrs: {
+                              d:
+                                "M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                            }
+                          })
                         ]
                       )
-                    ]
-                  )
-                ]
-              )
-            ])
-          ]
-        )
-      ]
-    ),
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c("nav", { staticClass: "lg:hidden w-full bg-gray-900 px-6 lg:px-0" }, [
       _c(
@@ -21373,7 +21365,7 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "flex flex-col sm:flex-row items-center lg:w-1/3 text-lg"
+        staticClass: "flex flex-col sm:flex-row items-center lg:w-3/4 text-lg"
       },
       [
         _c(
@@ -22010,7 +22002,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w-full lg:w-3/4" }, [
+  return _c("div", { staticClass: "w-full xl:w-3/4" }, [
     _c(
       "div",
       { staticClass: "flex flex-col sm:flex-row" },
@@ -22106,7 +22098,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex flex-col lg:flex-row w-full mt-8 lg:mt-20 mb-32" },
+    { staticClass: "flex flex-col xl:flex-row w-full mt-8 xl:mt-20 mb-32" },
     [
       _c("show-movie", { attrs: { movie: _vm.movie } }),
       _vm._v(" "),
@@ -22142,7 +22134,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-full lg:w-1/4 lg:pl-10 mt-16 lg:mt-0" },
+    { staticClass: "w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0" },
     [
       _vm.relatedMovies.length
         ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [

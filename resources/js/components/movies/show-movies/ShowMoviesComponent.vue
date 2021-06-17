@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row w-full mt-8 lg:mt-20 mb-32">
+  <div class="flex flex-col xl:flex-row w-full mt-8 xl:mt-20 mb-32">
 
     <!-- Show Movie -->
     <show-movie :movie="movie" />

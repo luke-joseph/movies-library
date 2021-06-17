@@ -1,5 +1,5 @@
 <template>
-<div class="w-full lg:w-3/4">
+<div class="w-full xl:w-3/4">
       <div class="flex flex-col sm:flex-row">
 
         <!-- Poster Exists -->

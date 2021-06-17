@@ -1,22 +1,22 @@
 <template>
   <div class="">
     <!-- large devices -->
-    <nav class="hidden lg:block w-full bg-gray-900 px-6 lg:px-0">
+    <nav class="hidden lg:block w-full bg-gray-900 px-6">
 
       <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
 
-          <div class="flex flex-col sm:flex-row items-center lg:w-1/3 text-lg">
+          <div class="flex flex-col sm:flex-row items-center lg:w-3/4 text-lg">
             <a href="/" class="text-white mt-1 sm:mt-0">MoviesDB </a>
             <a href="/" class="text-white mt-2 sm:mt-0 sm:ml-10">Movies</a>
             <a href="#" class="text-white mt-1 sm:mt-0 sm:ml-6 mb-6 sm:mb-0">Actors</a>
           </div>
 
           <!-- search input -->
-          <div class="hidden sm:block sm:w-1/3">
+          <div class="hidden sm:block sm:w-1/4">
 
             <div class="search flex flex-col sm:flex-row sm:flex-wrap items-center w-full mx-auto rounded p-4 justify-between">
 
-            <div class="w-5/6 sm:w-full mx-auto sm:mx-0 lg:w-1/2 mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm mr-auto lg:mr-0">
+            <div class="w-full mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm ml-auto">
 
               <div class="flex w-full rounded bg-white">
 

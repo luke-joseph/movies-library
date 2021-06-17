@@ -5,7 +5,7 @@
         <nav-bar />
       </div>
 
-      <div class="container mx-auto sm:mt-10 lg:mt-6 sm:mb-16 px-6 lg:px-0">
+      <div class="container mx-auto sm:mt-10 lg:mt-6 sm:mb-16 px-6">
 
         @yield('content')
 
