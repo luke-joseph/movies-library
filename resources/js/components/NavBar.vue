@@ -7,8 +7,6 @@
 
           <div class="flex flex-col sm:flex-row items-center lg:w-3/4 text-lg">
             <a href="/" class="text-white mt-1 sm:mt-0">MoviesDB </a>
-            <a href="/" class="text-white mt-2 sm:mt-0 sm:ml-10">Movies</a>
-            <a href="#" class="text-white mt-1 sm:mt-0 sm:ml-6 mb-6 sm:mb-0">Actors</a>
           </div>
 
           <!-- search input -->
@@ -64,8 +62,7 @@
             </div>
 
               <div v-if="showDropDown" class="flex flex-col">
-                <a href="/" class="text-white mt-2">Movies</a>
-                <a href="#" class="text-white mt-1 mb-4">Actors</a>
+                <a href="/" class="text-white mt-2 mb-4">Movies</a>
 
                 <!-- search input -->
                 <div class="w-full">

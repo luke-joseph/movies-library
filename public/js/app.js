@@ -2007,9 +2007,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -21240,17 +21237,11 @@ var render = function() {
               ? _c("div", { staticClass: "flex flex-col" }, [
                   _c(
                     "a",
-                    { staticClass: "text-white mt-2", attrs: { href: "/" } },
-                    [_vm._v("Movies")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
                     {
-                      staticClass: "text-white mt-1 mb-4",
-                      attrs: { href: "#" }
+                      staticClass: "text-white mt-2 mb-4",
+                      attrs: { href: "/" }
                     },
-                    [_vm._v("Actors")]
+                    [_vm._v("Movies")]
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "w-full" }, [
@@ -21367,24 +21358,6 @@ var staticRenderFns = [
           "a",
           { staticClass: "text-white mt-1 sm:mt-0", attrs: { href: "/" } },
           [_vm._v("MoviesDB ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "text-white mt-2 sm:mt-0 sm:ml-10",
-            attrs: { href: "/" }
-          },
-          [_vm._v("Movies")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "text-white mt-1 sm:mt-0 sm:ml-6 mb-6 sm:mb-0",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Actors")]
         )
       ]
     )
@@ -22016,21 +21989,23 @@ var render = function() {
               "h3",
               {
                 staticClass:
-                  "text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
+                  "text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
               },
               [_vm._v(_vm._s(_vm.movie.original_title))]
             ),
             _vm._v(" "),
             _c(
-              "p",
+              "div",
               {
                 staticClass:
-                  "mt-4 tracking-wide font-semibold text-gray-300 text-xl"
+                  "flex flex-col mt-4 tracking-wide font-semibold text-gray-300 text-xl"
               },
               [
-                _c("span", [_vm._v(_vm._s(_vm.movie.genres) + " |")]),
+                _c("p", [_vm._v(_vm._s(_vm.movie.genres))]),
                 _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(_vm.movie.release_date))])
+                _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
+                  _vm._v(_vm._s(_vm.movie.release_date))
+                ])
               ]
             ),
             _vm._v(" "),

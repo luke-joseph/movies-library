@@ -17,12 +17,12 @@
 
         <div class="movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12">
 
-          <h3 class="text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ movie.original_title }}</h3>
+          <h3 class="text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ movie.original_title }}</h3>
 
-          <p class="mt-4 tracking-wide font-semibold text-gray-300 text-xl">
-            <span>{{ movie.genres }} |</span>
-            <span>{{ movie.release_date }}</span>
-          </p>
+          <div class="flex flex-col mt-4 tracking-wide font-semibold text-gray-300 text-xl">
+            <p>{{ movie.genres }}</p>
+            <p class="text-sm mt-1 text-gray-400">{{ movie.release_date }}</p>
+          </div>
 
           <p class="mt-4 text-gray-300 text-lg">
             {{ movie.overview }}
