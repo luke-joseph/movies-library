@@ -11,7 +11,7 @@
           <img @click="showMovie(movie.id)"
           :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
           :alt="movie.original_title + ' film poster'"
-          class="hover:opacity-75 cursor-pointer">
+          class="hover:opacity-75 cursor-pointer w-4/5 sm:w-auto">
 
           <!-- mobile devices info -->
           <div class="sm:hidden">

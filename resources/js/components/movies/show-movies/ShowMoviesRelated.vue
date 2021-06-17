@@ -5,39 +5,42 @@
       <h2 v-if="relatedMovies.length" class="text-3xl font-bold text-indigo-300 mb-8">// Related Movies</h2>
 
       <!-- Mini movie -->
+      <div class="flex flex-col lg:flex-row xl:flex-col">
 
-      <div v-for="movie in relatedMovies" class="mini-movie mt-6">
+        <div v-for="movie in relatedMovies" class="mini-movie mt-6 lg:w-1/4 xl:w-auto">
 
-        <div class="flex">
+          <div class="flex">
 
-          <div class="">
+            <div class="">
 
-            <a :href="'/movie/show/' + movie.id">
+              <a :href="'/movie/show/' + movie.id">
 
-              <img :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
-              :alt="movie.original_title + ' poster'" class="hover:opacity-75 small-poster">
+                <img :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
+                :alt="movie.original_title + ' poster'" class="hover:opacity-75 small-poster">
 
-            </a>
+              </a>
 
-          </div>
+            </div>
 
-          <div class="movie-info ml-4">
+            <div class="movie-info ml-4">
 
-            <a :href="'/movie/show/' + movie.id">
+              <a :href="'/movie/show/' + movie.id">
 
-              <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
+                <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
 
-            </a>
+              </a>
 
-            <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400">{{ movie.genres }}</p>
+              <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400">{{ movie.genres }}</p>
 
-            <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
+              <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
+
+            </div>
 
           </div>
 
         </div>
 
-      </div>
+     </div>
 
     </div>
 </template>

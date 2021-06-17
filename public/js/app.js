@@ -2576,6 +2576,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     relatedMovies: {
@@ -21713,7 +21716,8 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "hover:opacity-75 cursor-pointer",
+                  staticClass:
+                    "hover:opacity-75 cursor-pointer w-4/5 sm:w-auto",
                   attrs: {
                     src: "https://image.tmdb.org/t/p/w300" + movie.poster_path,
                     alt: movie.original_title + " film poster"
@@ -22132,67 +22136,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0" },
-    [
-      _vm.relatedMovies.length
-        ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
-            _vm._v("// Related Movies")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
+  return _c("div", { staticClass: "w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0" }, [
+    _vm.relatedMovies.length
+      ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
+          _vm._v("// Related Movies")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "flex flex-col lg:flex-row xl:flex-col" },
       _vm._l(_vm.relatedMovies, function(movie) {
-        return _c("div", { staticClass: "mini-movie mt-6" }, [
-          _c("div", { staticClass: "flex" }, [
-            _c("div", {}, [
-              _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
-                _c("img", {
-                  staticClass: "hover:opacity-75 small-poster",
-                  attrs: {
-                    src: "https://image.tmdb.org/t/p/w92" + movie.poster_path,
-                    alt: movie.original_title + " poster"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "movie-info ml-4" }, [
-              _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
-                _c(
-                  "h3",
-                  {
-                    staticClass:
-                      "text-xl md:text-4xl lg:text-xl tracking-wider hover:underline"
-                  },
-                  [_vm._v(_vm._s(movie.original_title))]
-                )
+        return _c(
+          "div",
+          { staticClass: "mini-movie mt-6 lg:w-1/4 xl:w-auto" },
+          [
+            _c("div", { staticClass: "flex" }, [
+              _c("div", {}, [
+                _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
+                  _c("img", {
+                    staticClass: "hover:opacity-75 small-poster",
+                    attrs: {
+                      src: "https://image.tmdb.org/t/p/w92" + movie.poster_path,
+                      alt: movie.original_title + " poster"
+                    }
+                  })
+                ])
               ]),
               _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400"
-                },
-                [_vm._v(_vm._s(movie.genres))]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300"
-                },
-                [_vm._v(_vm._s(movie.release_date))]
-              )
+              _c("div", { staticClass: "movie-info ml-4" }, [
+                _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
+                  _c(
+                    "h3",
+                    {
+                      staticClass:
+                        "text-xl md:text-4xl lg:text-xl tracking-wider hover:underline"
+                    },
+                    [_vm._v(_vm._s(movie.original_title))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400"
+                  },
+                  [_vm._v(_vm._s(movie.genres))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300"
+                  },
+                  [_vm._v(_vm._s(movie.release_date))]
+                )
+              ])
             ])
-          ])
-        ])
-      })
-    ],
-    2
-  )
+          ]
+        )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
