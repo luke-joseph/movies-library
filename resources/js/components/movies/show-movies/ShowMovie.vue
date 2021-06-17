@@ -1,19 +1,19 @@
 <template>
 <div class="w-full xl:w-3/4">
-      <div class="flex flex-col sm:flex-row">
+      <div class="flex flex-col md:flex-row">
 
         <!-- Poster Exists -->
         <img v-if="movie.poster_path"
         :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
         :alt="movie.original_title + ' poster'"
-        class="cursor-pointer w-4/5 sm:w-auto rounded">
+        class="cursor-pointer w-4/5 sm:w-auto rounded object-contain object-top">
 
         <!-- Poster Doesn't Exist - Show placeholder -->
-        <img v-else src="https://via.placeholder.com/342" class="rounded"
+        <img v-else src="https://via.placeholder.com/342" class="rounded object-contain object-top"
         :alt="movie.original_title + ' no poster found'">
 
         <rating :ratingPercent="movie.vote_average * 10"
-        class="-mt-8 ml-1 lg:-ml-8 lg:-mt-4 lg:-mb-0"/>
+        class="-mt-8 ml-1 md:-ml-8 md:-mt-4 md:-mb-0"/>
 
         <div class="movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12">
 

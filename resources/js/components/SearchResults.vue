@@ -22,13 +22,13 @@
         <img @click="showMovie(result.id)" v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1) + 'x278'"
         :alt="result.original_title + ' no poster found'">
 
-        <div class="result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12">
+        <div class="result-info flex flex-col sm:ml-6 sm:mr-2 lg:ml-12 lg:mr-12">
 
           <a :href="'/movie/show/' + result.id">
             <h3 class="text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white hover:underline">{{ result.original_title }}</h3>
           </a>
 
-          <!-- search info sm -->
+          <!-- search info -->
           <p class="lg:hidden tracking-wide font-semibold text-gray-300 text-base sm:text-xl flex flex-col">
 
             <p class="text-gray-400">{{ result.genres }}</p>
@@ -37,14 +37,6 @@
 
           </p>
 
-          <!-- search info large -->
-          <p class="hidden lg:block mt-4 tracking-wide font-semibold text-gray-300 text-base sm:text-xl">
-            <span>{{ (result.vote_average * 10) + '%' }} |</span>
-
-            <span>{{ result.genres }} | </span>
-
-            <span>{{ result.release_date }}</span>
-          </p>
 
           <p v-if="result.overview" class="hidden lg:block mt-4 text-gray-300 text-lg">
             {{ result.overview.substring(0, 240) }}...

@@ -2137,14 +2137,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     searchResults: {
@@ -21544,7 +21536,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "result-info flex flex-col md:ml-6 md:mr-2 lg:ml-12 lg:mr-12"
+                  "result-info flex flex-col sm:ml-6 sm:mr-2 lg:ml-12 lg:mr-12"
               },
               [
                 _c("a", { attrs: { href: "/movie/show/" + result.id } }, [
@@ -21575,23 +21567,6 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("p"),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "hidden lg:block mt-4 tracking-wide font-semibold text-gray-300 text-base sm:text-xl"
-                  },
-                  [
-                    _c("span", [
-                      _vm._v(_vm._s(result.vote_average * 10 + "%") + " |")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(result.genres) + " | ")]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(result.release_date))])
-                  ]
-                ),
                 _vm._v(" "),
                 result.overview
                   ? _c(
@@ -22009,18 +21984,19 @@ var render = function() {
   return _c("div", { staticClass: "w-full xl:w-3/4" }, [
     _c(
       "div",
-      { staticClass: "flex flex-col sm:flex-row" },
+      { staticClass: "flex flex-col md:flex-row" },
       [
         _vm.movie.poster_path
           ? _c("img", {
-              staticClass: "cursor-pointer w-4/5 sm:w-auto rounded",
+              staticClass:
+                "cursor-pointer w-4/5 sm:w-auto rounded object-contain object-top",
               attrs: {
                 src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
                 alt: _vm.movie.original_title + " poster"
               }
             })
           : _c("img", {
-              staticClass: "rounded",
+              staticClass: "rounded object-contain object-top",
               attrs: {
                 src: "https://via.placeholder.com/342",
                 alt: _vm.movie.original_title + " no poster found"
@@ -22028,7 +22004,7 @@ var render = function() {
             }),
         _vm._v(" "),
         _c("rating", {
-          staticClass: "-mt-8 ml-1 lg:-ml-8 lg:-mt-4 lg:-mb-0",
+          staticClass: "-mt-8 ml-1 md:-ml-8 md:-mt-4 md:-mb-0",
           attrs: { ratingPercent: _vm.movie.vote_average * 10 }
         }),
         _vm._v(" "),
