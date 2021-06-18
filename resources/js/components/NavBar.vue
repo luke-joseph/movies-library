@@ -1,12 +1,12 @@
 <template>
   <div class="">
     <!-- large devices -->
-    <nav class="hidden lg:block w-full bg-gray-900 px-6">
+    <nav class="hidden lg:block w-full bg-gray-300 px-6">
 
       <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
 
           <div class="flex flex-col sm:flex-row items-center lg:w-3/4 text-lg">
-            <a href="/" class="text-white mt-1 sm:mt-0">MoviesDB </a>
+            <a href="/" class="text-gray-500 font-bold mt-1 sm:mt-0 hover:text-gray-700">MoviesDB </a>
           </div>
 
           <!-- search input -->
@@ -16,7 +16,7 @@
 
             <div class="w-full mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm ml-auto">
 
-              <div class="flex w-full rounded bg-white">
+              <div class="flex w-full rounded bg-white border border-gray-300 shadow-inner">
 
                 <input class="w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none" @keydown.enter="searchMovies"
                 type="text" name="movie_search" v-model="searchQuery" value="" placeholder="Search Movies...">

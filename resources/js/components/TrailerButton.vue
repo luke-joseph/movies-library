@@ -2,7 +2,7 @@
   <div class="trailer mt-10">
 
     <button @click="showTrailer"
-    class="uppercase text-lg font-semibold tracking-wider bg-indigo-700 px-6 py-3 rounded">
+    class="trailer-button uppercase text-lg font-semibold tracking-wider px-6 py-3 rounded text-white">
       Watch Trailer
     </button>
 
@@ -47,3 +47,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.trailer-button{
+  background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+  background-image: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+}
+</style>

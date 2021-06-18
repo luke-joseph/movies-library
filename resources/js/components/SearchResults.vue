@@ -42,8 +42,7 @@
             {{ result.overview.substring(0, 240) }}...
           </p>
 
-          <p v-else class="mt-4 text-gray-300 text-lg h-12">
-          </p>
+          <p v-else class="mt-4 text-gray-300 text-lg h-12"></p>
 
         </div>
 

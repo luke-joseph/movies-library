@@ -8,10 +8,16 @@
     :popular-movies="{{ $popularMovies }}"
     ></popular-movies>
 
-    <index-secondary-section
-    :top-rated-movies="{{ $topRatedMovies }}"
-    :upcoming-movies="{{ $upcomingMovies }}"
-    />
+    <div class="flex flex-col lg:flex-row w-full mt-20 mb-24 lg:mb-64">
+
+      <todays-recommended
+      :top-rated-movies="{{ $topRatedMovies }}">
+      </todays-recommended>
+
+      <upcoming-movies
+      :upcoming-movies="{{ $upcomingMovies }}"/>
+
+    </div>
 
   </div>
 
