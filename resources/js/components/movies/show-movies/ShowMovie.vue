@@ -35,6 +35,27 @@
         </div>
 
       </div>
+
+      <!-- Cast -->
+      <div class="mt-20 mb-20">
+        <h4 class="text-3xl mb-4">Cast</h4>
+        <div class="flex w-full grid grid-flow-col grid-cols-5 grid-rows-1 gap-4">
+
+          <div v-for="actor in cast" class="flex flex-col">
+
+            <img :src="'https://image.tmdb.org/t/p/original' + actor.profile_path"
+            :alt="actor.original_name + ' profile picture'"
+            class="w-4/5 sm:w-auto rounded object-contain object-top">
+
+            <h4 class="mt-2 text-lg">{{ actor.original_name }}</h4>
+
+            <p class="mt-1 text-gray-400">{{ actor.character }}</p>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
 </template>
@@ -46,6 +67,18 @@ export default {
     movie:{
       type: Object,
       required: true
+    }
+  },
+  data(){
+    return{
+      castAmount: 5
+    }
+  },
+  computed: {
+    cast: function(){
+      return this.movie.credits.cast.filter((actor, index) => {
+        return index < this.castAmount;
+      });
     }
   }
 }

@@ -2461,11 +2461,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     movie: {
       type: Object,
       required: true
+    }
+  },
+  data: function data() {
+    return {
+      castAmount: 5
+    };
+  },
+  computed: {
+    cast: function cast() {
+      var _this = this;
+
+      return this.movie.credits.cast.filter(function (actor, index) {
+        return index < _this.castAmount;
+      });
     }
   }
 });
@@ -22025,7 +22060,39 @@ var render = function() {
         )
       ],
       1
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-20 mb-20" }, [
+      _c("h4", { staticClass: "text-3xl mb-4" }, [_vm._v("Cast")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex w-full grid grid-flow-col grid-cols-5 grid-rows-1 gap-4"
+        },
+        _vm._l(_vm.cast, function(actor) {
+          return _c("div", { staticClass: "flex flex-col" }, [
+            _c("img", {
+              staticClass: "w-4/5 sm:w-auto rounded object-contain object-top",
+              attrs: {
+                src: "https://image.tmdb.org/t/p/original" + actor.profile_path,
+                alt: actor.original_name + " profile picture"
+              }
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "mt-2 text-lg" }, [
+              _vm._v(_vm._s(actor.original_name))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-1 text-gray-400" }, [
+              _vm._v(_vm._s(actor.character))
+            ])
+          ])
+        }),
+        0
+      )
+    ])
   ])
 }
 var staticRenderFns = []

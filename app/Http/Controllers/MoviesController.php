@@ -43,7 +43,7 @@ class MoviesController extends Controller
     {
 
       $singleMovie = tmdbApi::getSingleMovie(
-        "movie/" . $movieId . '?append_to_response=videos'
+        "movie/" . $movieId . '?append_to_response=videos,credits'
       );
 
       $relatedMovies = tmdbApi::getMovies("movie/" . $movieId . "/similar", 4);
