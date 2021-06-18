@@ -2,7 +2,7 @@
   <div class="trailer mt-10">
 
     <button @click="showTrailer"
-    class="trailer-button uppercase text-lg font-semibold tracking-wider px-6 py-3 rounded text-white">
+    class="trailer-button uppercase text-lg font-semibold tracking-wider px-6 py-3 rounded-full text-white">
       Watch Trailer
     </button>
 

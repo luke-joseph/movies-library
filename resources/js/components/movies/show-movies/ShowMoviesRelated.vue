@@ -2,7 +2,7 @@
 
     <div class="w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0">
 
-      <h2 v-if="relatedMovies.length" class="text-3xl font-bold text-indigo-200 mb-8">Related Movies</h2>
+      <h2 v-if="relatedMovies.length" class="text-3xl font-semibold text-gray-400 mb-8">Related Movies</h2>
 
       <!-- Mini movie -->
       <div class="flex flex-col lg:flex-row xl:flex-col">
@@ -26,13 +26,13 @@
 
               <a :href="'/movie/show/' + movie.id">
 
-                <h3 class="text-xl md:text-4xl lg:text-xl tracking-wider hover:underline">{{ movie.original_title }}</h3>
+                <h3 class="text-xl md:text-4xl lg:text-xl hover:underline">{{ movie.original_title }}</h3>
 
               </a>
 
-              <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400">{{ movie.genres }}</p>
+              <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-500">{{ movie.genres }}</p>
 
-              <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300">{{ movie.release_date }}</p>
+              <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 text-gray-400">{{ movie.release_date }}</p>
 
             </div>
 

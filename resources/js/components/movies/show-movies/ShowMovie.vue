@@ -17,14 +17,14 @@
 
         <div class="movie-info md:ml-6 md:mr-2 xl:ml-12 xl:mr-12">
 
-          <h3 class="text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white">{{ movie.original_title }}</h3>
+          <h3 class="text-2xl sm:text-4xl mt-2 sm:mt-0 text-gray-900">{{ movie.original_title }}</h3>
 
-          <div class="flex flex-col mt-4 tracking-wide font-semibold text-gray-300 text-xl">
+          <div class="flex flex-col mt-4 tracking-wide font-semibold text-gray-600 text-xl">
             <p>{{ movie.genres }}</p>
-            <p class="text-sm mt-1 text-gray-400">{{ movie.release_date }}</p>
+            <p class="text-sm mt-1 text-gray-500">{{ movie.release_date }}</p>
           </div>
 
-          <p class="mt-4 text-gray-300 text-lg">
+          <p class="mt-4 text-gray-600 text-lg">
             {{ movie.overview }}
           </p>
 
@@ -38,7 +38,7 @@
 
       <!-- Cast -->
       <div class="mt-20 sm:mt-16 sm:mb-20">
-        <h4 class="text-3xl mb-4">Cast</h4>
+        <h4 class="text-2xl sm:text-4xl mb-6 text-gray-400">Cast</h4>
         <div class="flex w-full grid grid-flow-col grid-cols-3 grid-rows-2 sm:grid-cols-6 sm:grid-rows-1 gap-4">
 
           <div v-for="actor in cast" class="flex flex-col">

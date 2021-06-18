@@ -21125,7 +21125,9 @@ var render = function() {
                   "div",
                   { staticClass: "flex items-center modal-heading mb-4" },
                   [
-                    _c("span", [_vm._v(_vm._s(_vm.name))]),
+                    _c("span", { staticClass: "text-gray-300" }, [
+                      _vm._v(_vm._s(_vm.name))
+                    ]),
                     _vm._v(" "),
                     _c(
                       "button",
@@ -21783,7 +21785,7 @@ var render = function() {
         "button",
         {
           staticClass:
-            "trailer-button uppercase text-lg font-semibold tracking-wider px-6 py-3 rounded text-white",
+            "trailer-button uppercase text-lg font-semibold tracking-wider px-6 py-3 rounded-full text-white",
           on: { click: _vm.showTrailer }
         },
         [_vm._v("\n    Watch Trailer\n  ")]
@@ -22179,8 +22181,7 @@ var render = function() {
             _c(
               "h3",
               {
-                staticClass:
-                  "text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white"
+                staticClass: "text-2xl sm:text-4xl mt-2 sm:mt-0 text-gray-900"
               },
               [_vm._v(_vm._s(_vm.movie.original_title))]
             ),
@@ -22189,18 +22190,18 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "flex flex-col mt-4 tracking-wide font-semibold text-gray-300 text-xl"
+                  "flex flex-col mt-4 tracking-wide font-semibold text-gray-600 text-xl"
               },
               [
                 _c("p", [_vm._v(_vm._s(_vm.movie.genres))]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-sm mt-1 text-gray-400" }, [
+                _c("p", { staticClass: "text-sm mt-1 text-gray-500" }, [
                   _vm._v(_vm._s(_vm.movie.release_date))
                 ])
               ]
             ),
             _vm._v(" "),
-            _c("p", { staticClass: "mt-4 text-gray-300 text-lg" }, [
+            _c("p", { staticClass: "mt-4 text-gray-600 text-lg" }, [
               _vm._v(
                 "\r\n            " +
                   _vm._s(_vm.movie.overview) +
@@ -22219,7 +22220,9 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "mt-20 sm:mt-16 sm:mb-20" }, [
-      _c("h4", { staticClass: "text-3xl mb-4" }, [_vm._v("Cast")]),
+      _c("h4", { staticClass: "text-2xl sm:text-4xl mb-6 text-gray-400" }, [
+        _vm._v("Cast")
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -22328,7 +22331,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0" }, [
     _vm.relatedMovies.length
-      ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-200 mb-8" }, [
+      ? _c("h2", { staticClass: "text-3xl font-semibold text-gray-400 mb-8" }, [
           _vm._v("Related Movies")
         ])
       : _vm._e(),
@@ -22360,7 +22363,7 @@ var render = function() {
                     "h3",
                     {
                       staticClass:
-                        "text-xl md:text-4xl lg:text-xl tracking-wider hover:underline"
+                        "text-xl md:text-4xl lg:text-xl hover:underline"
                     },
                     [_vm._v(_vm._s(movie.original_title))]
                   )
@@ -22370,7 +22373,7 @@ var render = function() {
                   "p",
                   {
                     staticClass:
-                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-400"
+                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-500"
                   },
                   [_vm._v(_vm._s(movie.genres))]
                 ),
@@ -22379,7 +22382,7 @@ var render = function() {
                   "p",
                   {
                     staticClass:
-                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 font-semibold text-gray-300"
+                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 text-gray-400"
                   },
                   [_vm._v(_vm._s(movie.release_date))]
                 )
