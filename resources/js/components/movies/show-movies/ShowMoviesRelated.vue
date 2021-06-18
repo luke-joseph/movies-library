@@ -1,6 +1,6 @@
 <template>
 
-    <div :class="[relatedMovies.length ? 'sm:bg-gray-50' : '']" class="w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 xl:px-10 xl:py-10 xl:-mt-10 rounded">
+    <div :class="[relatedMovies.length ? 'xl:bg-gray-50' : '']" class="w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 xl:px-10 xl:py-10 xl:-mt-10 rounded">
 
       <h2 v-if="relatedMovies.length" class="text-3xl font-semibold text-gray-400 mb-8 sm:mb-2">Related Movies</h2>
 

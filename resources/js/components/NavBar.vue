@@ -16,7 +16,7 @@
 
             <div class="w-full mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm ml-auto">
 
-              <div class="flex w-full rounded-full bg-white border border-gray-300 shadow-inner">
+              <div class="flex w-full rounded-full bg-white border border-gray-300">
 
                 <input class="w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none" @keydown.enter="searchMovies"
                 type="text" name="movie_search" v-model="searchQuery" value="" placeholder="Search Movies...">

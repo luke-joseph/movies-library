@@ -21261,7 +21261,7 @@ var render = function() {
                       "div",
                       {
                         staticClass:
-                          "flex w-full rounded-full bg-white border border-gray-300 shadow-inner"
+                          "flex w-full rounded-full bg-white border border-gray-300"
                       },
                       [
                         _c("input", {
@@ -22370,7 +22370,7 @@ var render = function() {
     {
       staticClass:
         "w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 xl:px-10 xl:py-10 xl:-mt-10 rounded",
-      class: [_vm.relatedMovies.length ? "sm:bg-gray-50" : ""]
+      class: [_vm.relatedMovies.length ? "xl:bg-gray-50" : ""]
     },
     [
       _vm.relatedMovies.length
