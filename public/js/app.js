@@ -2495,7 +2495,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      castAmount: 5
+      castAmount: 6
     };
   },
   computed: {
@@ -21690,8 +21690,8 @@ var render = function() {
         "div",
         { staticClass: "w-full lg:w-2/3" },
         [
-          _c("h2", { staticClass: "text-3xl font-bold text-indigo-300" }, [
-            _vm._v("// Today's Recommended Movies")
+          _c("h2", { staticClass: "text-3xl font-bold text-indigo-200" }, [
+            _vm._v("Today's Recommended Movies")
           ]),
           _vm._v(" "),
           _vm._l(_vm.topRatedMovies, function(movie) {
@@ -21803,9 +21803,9 @@ var render = function() {
             _c(
               "h2",
               {
-                staticClass: "text-3xl font-bold text-indigo-300 mb-12 sm:mb-8"
+                staticClass: "text-3xl font-bold text-indigo-200 mb-12 sm:mb-8"
               },
-              [_vm._v("// Upcoming Movies")]
+              [_vm._v("Upcoming Movies")]
             ),
             _vm._v(" "),
             _vm._l(_vm.upcomingMovies, function(movie) {
@@ -21894,8 +21894,8 @@ var render = function() {
   return _c("div", { staticClass: "mt-8 sm:mt-16" }, [
     _c(
       "h2",
-      { staticClass: "text-3xl font-bold text-indigo-300 leading-tight" },
-      [_vm._v("// Popular Movies")]
+      { staticClass: "text-3xl font-bold text-indigo-200 leading-tight" },
+      [_vm._v("Popular Movies")]
     ),
     _vm._v(" "),
     _c(
@@ -22000,8 +22000,7 @@ var render = function() {
       [
         _vm.movie.poster_path
           ? _c("img", {
-              staticClass:
-                "cursor-pointer w-4/5 sm:w-auto rounded object-contain object-top",
+              staticClass: "w-4/5 sm:w-auto rounded object-contain object-top",
               attrs: {
                 src: "https://image.tmdb.org/t/p/w342" + _vm.movie.poster_path,
                 alt: _vm.movie.original_title + " poster"
@@ -22066,21 +22065,21 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "mt-20 mb-20" }, [
+    _c("div", { staticClass: "mt-20 sm:mt-16 sm:mb-20" }, [
       _c("h4", { staticClass: "text-3xl mb-4" }, [_vm._v("Cast")]),
       _vm._v(" "),
       _c(
         "div",
         {
           staticClass:
-            "flex w-full grid grid-flow-col grid-cols-5 grid-rows-1 gap-4"
+            "flex w-full grid grid-flow-col grid-cols-3 grid-rows-2 sm:grid-cols-6 sm:grid-rows-1 gap-4"
         },
         _vm._l(_vm.cast, function(actor) {
           return _c("div", { staticClass: "flex flex-col" }, [
             actor.profile_path
               ? _c("img", {
                   staticClass:
-                    "w-4/5 sm:w-auto rounded object-contain object-top",
+                    "w-full sm:w-auto rounded object-contain object-top",
                   attrs: {
                     src:
                       "https://image.tmdb.org/t/p/original" +
@@ -22092,7 +22091,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "w-4/5 flex sm:w-auto rounded object-contain object-top bg-gray-700 h-full"
+                      "w-full flex sm:w-auto rounded object-contain object-top bg-gray-700 h-full"
                   },
                   [
                     _c("p", { staticClass: "m-auto text-gray-200" }, [
@@ -22176,8 +22175,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0" }, [
     _vm.relatedMovies.length
-      ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
-          _vm._v("// Related Movies")
+      ? _c("h2", { staticClass: "text-3xl font-bold text-indigo-200 mb-8" }, [
+          _vm._v("Related Movies")
         ])
       : _vm._e(),
     _vm._v(" "),

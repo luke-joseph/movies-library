@@ -4,7 +4,7 @@
     <!-- Todays Recommended -->
     <div class="w-full lg:w-2/3">
 
-      <h2 class="text-3xl font-bold text-indigo-300">// Today's Recommended Movies</h2>
+      <h2 class="text-3xl font-bold text-indigo-200">Today's Recommended Movies</h2>
 
       <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex flex-col sm:flex-row sm:bg-gray-900 sm:p-6 rounded">
 
@@ -54,7 +54,7 @@
   <!-- Coming Soon -->
     <div class="mt-8 lg:mt-0 lg:w-1/3">
       <div class="lg:w-3/4 lg:ml-auto h-full">
-      <h2 class="text-3xl font-bold text-indigo-300 mb-12 sm:mb-8">// Upcoming Movies</h2>
+      <h2 class="text-3xl font-bold text-indigo-200 mb-12 sm:mb-8">Upcoming Movies</h2>
   <!-- Mini movie -->
       <div v-for="movie in upcomingMovies" class="mini-movie mt-6">
         <div class="flex">

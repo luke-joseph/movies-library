@@ -6,7 +6,7 @@
         <img v-if="movie.poster_path"
         :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path"
         :alt="movie.original_title + ' poster'"
-        class="cursor-pointer w-4/5 sm:w-auto rounded object-contain object-top">
+        class="w-4/5 sm:w-auto rounded object-contain object-top">
 
         <!-- Poster Doesn't Exist - Show placeholder -->
         <img v-else src="https://via.placeholder.com/342" class="rounded object-contain object-top"
@@ -37,17 +37,17 @@
       </div>
 
       <!-- Cast -->
-      <div class="mt-20 mb-20">
+      <div class="mt-20 sm:mt-16 sm:mb-20">
         <h4 class="text-3xl mb-4">Cast</h4>
-        <div class="flex w-full grid grid-flow-col grid-cols-5 grid-rows-1 gap-4">
+        <div class="flex w-full grid grid-flow-col grid-cols-3 grid-rows-2 sm:grid-cols-6 sm:grid-rows-1 gap-4">
 
           <div v-for="actor in cast" class="flex flex-col">
 
             <img v-if="actor.profile_path" :src="'https://image.tmdb.org/t/p/original' + actor.profile_path"
             :alt="actor.original_name + ' profile picture'"
-            class="w-4/5 sm:w-auto rounded object-contain object-top">
+            class="w-full sm:w-auto rounded object-contain object-top">
 
-            <div v-else class="w-4/5 flex sm:w-auto rounded object-contain object-top bg-gray-700 h-full">
+            <div v-else class="w-full flex sm:w-auto rounded object-contain object-top bg-gray-700 h-full">
               <p class="m-auto text-gray-200">No Image Found</p>
             </div>
 
@@ -75,7 +75,7 @@ export default {
   },
   data(){
     return{
-      castAmount: 5
+      castAmount: 6
     }
   },
   computed: {
