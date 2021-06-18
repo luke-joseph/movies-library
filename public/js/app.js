@@ -2358,6 +2358,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     topRatedMovies: {
@@ -21978,7 +21979,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "recommended-movie-container mt-8 flex flex-col sm:flex-row sm:bg-gray-100 sm:p-6 rounded"
+              "recommended-movie-container mt-8 flex flex-col sm:flex-row sm:p-6 rounded"
           },
           [
             _c("img", {
@@ -22036,7 +22037,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-sm mt-1 text-gray-600" }, [
+                _c("p", { staticClass: "text-sm mt-3 text-gray-600" }, [
                   _vm._v(_vm._s(movie.genres))
                 ]),
                 _vm._v(" "),
@@ -22368,13 +22369,16 @@ var render = function() {
     "div",
     {
       staticClass:
-        "w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 sm:bg-gray-50 xl:px-10 xl:py-10 xl:-mt-10 rounded"
+        "w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 xl:px-10 xl:py-10 xl:-mt-10 rounded",
+      class: [_vm.relatedMovies.length ? "sm:bg-gray-50" : ""]
     },
     [
       _vm.relatedMovies.length
         ? _c(
             "h2",
-            { staticClass: "text-3xl font-semibold text-gray-400 mb-8" },
+            {
+              staticClass: "text-3xl font-semibold text-gray-400 mb-8 sm:mb-2"
+            },
             [_vm._v("Related Movies")]
           )
         : _vm._e(),

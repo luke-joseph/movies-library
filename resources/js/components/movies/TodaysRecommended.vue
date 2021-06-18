@@ -3,7 +3,8 @@
 
     <h2 class="text-3xl font-bold text-gray-800">Today's Recommended Movies</h2>
 
-    <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex flex-col sm:flex-row sm:bg-gray-100 sm:p-6 rounded">
+    <!-- Recommended Movie Card -->
+    <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex flex-col sm:flex-row sm:p-6 rounded">
 
         <img @click="showMovie(movie.id)"
         :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
@@ -34,7 +35,7 @@
 
         </a>
 
-        <p class="text-sm mt-1 text-gray-600">{{ movie.genres }}</p>
+        <p class="text-sm mt-3 text-gray-600">{{ movie.genres }}</p>
 
         <p class="mt-1 tracking-wide font-semibold text-gray-400">Released {{ movie.release_date }}</p>
 
