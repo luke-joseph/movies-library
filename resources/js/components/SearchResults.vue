@@ -9,7 +9,7 @@
 
     <!-- Result Cards -->
 
-    <div v-for="result in searchResults" class="flex flex-col sm:flex-row mb-8 sm:bg-gray-100 sm:p-6 sm:rounded">
+    <div v-for="result in searchResults" class="flex flex-col sm:flex-row mb-8 sm:bg-gray-50 sm:p-6 sm:rounded">
 
         <!-- Poster Exists -->
 

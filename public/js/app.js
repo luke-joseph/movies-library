@@ -21692,7 +21692,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex flex-col sm:flex-row mb-8 sm:bg-gray-100 sm:p-6 sm:rounded"
+              "flex flex-col sm:flex-row mb-8 sm:bg-gray-50 sm:p-6 sm:rounded"
           },
           [
             result.poster_path
