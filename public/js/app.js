@@ -2057,11 +2057,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     ratingPercent: {
       type: Number,
       required: true
+    },
+    size: {
+      type: String,
+      "default": 'w-12 h-12',
+      required: false
     }
   }
 });
@@ -2079,6 +2088,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2290,6 +2305,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
 //
 //
 //
@@ -2579,6 +2596,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
 //
 //
 //
@@ -21212,7 +21231,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", {}, [
-    _c("nav", { staticClass: "hidden lg:block w-full bg-gray-300 px-6" }, [
+    _c("nav", { staticClass: "hidden lg:block w-full bg-gray-100 px-6" }, [
       _c(
         "div",
         {
@@ -21241,7 +21260,7 @@ var render = function() {
                       "div",
                       {
                         staticClass:
-                          "flex w-full rounded bg-white border border-gray-300 shadow-inner"
+                          "flex w-full rounded-full bg-white border border-gray-300 shadow-inner"
                       },
                       [
                         _c("input", {
@@ -21325,7 +21344,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("nav", { staticClass: "lg:hidden w-full bg-gray-900 px-6 lg:px-0" }, [
+    _c("nav", { staticClass: "lg:hidden w-full bg-gray-100 px-6 lg:px-0" }, [
       _c(
         "div",
         {
@@ -21335,9 +21354,14 @@ var render = function() {
         [
           _c("div", { staticClass: "flex flex-col w-full text-lg py-4" }, [
             _c("div", { staticClass: "flex justify-between items-center" }, [
-              _c("a", { staticClass: "text-white", attrs: { href: "/" } }, [
-                _vm._v("Movies DB")
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass: "text-gray-500 font-bold",
+                  attrs: { href: "/" }
+                },
+                [_vm._v("Movies DB")]
+              ),
               _vm._v(" "),
               _c("div", {}, [
                 _c(
@@ -21365,7 +21389,7 @@ var render = function() {
                   [
                     _c("path", {
                       staticClass: "secondary",
-                      staticStyle: { fill: "white" },
+                      staticStyle: { fill: "#6B7280" },
                       attrs: {
                         "fill-rule": "evenodd",
                         d:
@@ -21406,7 +21430,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("path", {
                       staticClass: "secondary",
-                      staticStyle: { fill: "white" },
+                      staticStyle: { fill: "#6B7280" },
                       attrs: {
                         d:
                           "M13.41 12l2.83 2.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 1 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12z"
@@ -21422,7 +21446,7 @@ var render = function() {
                   _c(
                     "a",
                     {
-                      staticClass: "text-white mt-2 mb-4",
+                      staticClass: "text-gray-500 mt-2 mb-4",
                       attrs: { href: "/" }
                     },
                     [_vm._v("Movies")]
@@ -21574,43 +21598,51 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "flex-wrapper" }, [
-    _c("div", { staticClass: "single-chart justify-around z-50" }, [
-      _c(
-        "svg",
-        {
-          staticClass: "circular-chart green block w-12 h-12",
-          attrs: { viewBox: "0 0 36 36" }
-        },
-        [
-          _c("path", {
-            staticClass: "circle-bg",
-            attrs: {
-              d:
-                "M18 2.0845\n          a 15.9155 15.9155 0 0 1 0 31.831\n          a 15.9155 15.9155 0 0 1 0 -31.831"
-            }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            staticClass: "circle",
-            attrs: {
-              "stroke-dasharray": _vm.ratingPercent + ", 100",
-              d:
-                "M18 2.0845\n          a 15.9155 15.9155 0 0 1 0 31.831\n          a 15.9155 15.9155 0 0 1 0 -31.831"
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "text",
-            {
-              staticClass:
-                "percentage fill-current text-white font-bold tracking-wide",
-              attrs: { x: "18", y: "20.35" }
-            },
-            [_vm._v("\n        " + _vm._s(_vm.ratingPercent) + "%\n      ")]
-          )
-        ]
-      )
-    ])
+    _c(
+      "div",
+      { staticClass: "single-chart justify-around z-50", class: _vm.size },
+      [
+        _c(
+          "svg",
+          {
+            staticClass: "circular-chart green block ",
+            attrs: { viewBox: "0 0 36 36" }
+          },
+          [
+            _c("path", {
+              staticClass: "circle-bg",
+              attrs: {
+                d:
+                  "M18 2.0845\n            a 15.9155 15.9155 0 0 1 0 31.831\n            a 15.9155 15.9155 0 0 1 0 -31.831"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              staticClass: "circle",
+              attrs: {
+                "stroke-dasharray": _vm.ratingPercent + ", 100",
+                d:
+                  "M18 2.0845\n            a 15.9155 15.9155 0 0 1 0 31.831\n            a 15.9155 15.9155 0 0 1 0 -31.831"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "text",
+              {
+                staticClass:
+                  "percentage fill-current text-white font-bold tracking-wide",
+                attrs: { x: "18", y: "20.35" }
+              },
+              [
+                _vm._v(
+                  "\n          " + _vm._s(_vm.ratingPercent) + "%\n        "
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -21640,8 +21672,8 @@ var render = function() {
     "div",
     { staticClass: "w-full xl:w-2/3 mt-8 sm:mt-16" },
     [
-      _c("h2", { staticClass: "text-3xl font-bold text-indigo-300 mb-8" }, [
-        _vm._v("// Search Results")
+      _c("h2", { staticClass: "text-3xl font-bold text-gray-800 mb-8" }, [
+        _vm._v("Search Results")
       ]),
       _vm._v(" "),
       _vm.searchResults.length
@@ -21659,7 +21691,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex flex-col sm:flex-row mb-8 sm:bg-gray-900 sm:p-6 sm:rounded"
+              "flex flex-col sm:flex-row mb-8 sm:bg-gray-100 sm:p-6 sm:rounded"
           },
           [
             result.poster_path
@@ -21705,7 +21737,7 @@ var render = function() {
                     "h3",
                     {
                       staticClass:
-                        "text-2xl sm:text-4xl mt-2 sm:mt-0 sm:tracking-wider text-white hover:underline"
+                        "text-2xl sm:text-4xl mt-2 sm:mt-0 text-gray-900 hover:underline"
                     },
                     [_vm._v(_vm._s(result.original_title))]
                   )
@@ -21713,19 +21745,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", {
                   staticClass:
-                    "lg:hidden tracking-wide font-semibold text-gray-300 text-base sm:text-xl flex flex-col"
+                    "lg:hidden tracking-wide font-semibold text-gray-600 text-base sm:text-xl flex flex-col"
                 }),
-                _c("p", { staticClass: "text-gray-400" }, [
+                _c("p", { staticClass: "text-gray-700" }, [
                   _vm._v(_vm._s(result.genres))
                 ]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    _vm._s(result.vote_average * 10 + "%") +
-                      " | " +
-                      _vm._s(result.release_date)
-                  )
-                ]),
+                _c("p", [_vm._v(_vm._s(result.release_date))]),
                 _vm._v(" "),
                 _c("p"),
                 _vm._v(" "),
@@ -21734,18 +21760,24 @@ var render = function() {
                       "p",
                       {
                         staticClass:
-                          "hidden lg:block mt-4 text-gray-300 text-lg"
+                          "hidden lg:block mt-4 text-gray-700 text-lg"
                       },
                       [
                         _vm._v(
-                          "\r\n            " +
+                          "\n            " +
                             _vm._s(result.overview.substring(0, 240)) +
-                            "...\r\n          "
+                            "...\n          "
                         )
                       ]
                     )
-                  : _c("p", { staticClass: "mt-4 text-gray-300 text-lg h-12" })
-              ]
+                  : _c("p", { staticClass: "mt-4 text-gray-300 text-lg h-12" }),
+                _vm._v(" "),
+                _c("rating", {
+                  staticClass: "mt-4",
+                  attrs: { "rating-percent": result.vote_average * 10 }
+                })
+              ],
+              1
             )
           ]
         )
@@ -22014,19 +22046,19 @@ var render = function() {
                     staticClass:
                       "mt-1 tracking-wide font-semibold text-gray-400"
                   },
-                  [
-                    _vm._v(
-                      _vm._s(movie.vote_average * 10 + "%") +
-                        " | Released " +
-                        _vm._s(movie.release_date)
-                    )
-                  ]
+                  [_vm._v("Released " + _vm._s(movie.release_date))]
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "mt-4 text-gray-700" }, [
                   _vm._v("\n        " + _vm._s(movie.overview) + "\n      ")
-                ])
-              ]
+                ]),
+                _vm._v(" "),
+                _c("rating", {
+                  staticClass: "mt-4",
+                  attrs: { "rating-percent": movie.vote_average * 10 }
+                })
+              ],
+              1
             )
           ]
         )
@@ -22219,7 +22251,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "mt-20 sm:mt-16 sm:mb-20" }, [
+    _c("div", { staticClass: "mt-20 sm:mt-16" }, [
       _c("h4", { staticClass: "text-2xl sm:text-4xl mb-6 text-gray-400" }, [
         _vm._v("Cast")
       ]),
@@ -22295,7 +22327,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex flex-col xl:flex-row w-full mt-8 xl:mt-20 mb-32" },
+    {
+      staticClass:
+        "flex flex-col xl:flex-row w-full mt-8 xl:mt-20 mb-32 items-start"
+    },
     [
       _c("show-movie", { attrs: { movie: _vm.movie } }),
       _vm._v(" "),
@@ -22329,71 +22364,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0" }, [
-    _vm.relatedMovies.length
-      ? _c("h2", { staticClass: "text-3xl font-semibold text-gray-400 mb-8" }, [
-          _vm._v("Related Movies")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "flex flex-col lg:flex-row xl:flex-col" },
-      _vm._l(_vm.relatedMovies, function(movie) {
-        return _c(
-          "div",
-          { staticClass: "mini-movie mt-6 lg:w-1/4 xl:w-auto" },
-          [
-            _c("div", { staticClass: "flex" }, [
-              _c("div", {}, [
-                _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
-                  _c("img", {
-                    staticClass: "hover:opacity-75 small-poster",
-                    attrs: {
-                      src: "https://image.tmdb.org/t/p/w92" + movie.poster_path,
-                      alt: movie.original_title + " poster"
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "movie-info ml-4" }, [
-                _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
-                  _c(
-                    "h3",
-                    {
-                      staticClass:
-                        "text-xl md:text-4xl lg:text-xl hover:underline"
-                    },
-                    [_vm._v(_vm._s(movie.original_title))]
-                  )
+  return _c(
+    "div",
+    {
+      staticClass:
+        "w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 sm:bg-gray-50 xl:px-10 xl:py-10 xl:-mt-10 rounded"
+    },
+    [
+      _vm.relatedMovies.length
+        ? _c(
+            "h2",
+            { staticClass: "text-3xl font-semibold text-gray-400 mb-8" },
+            [_vm._v("Related Movies")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex flex-col lg:flex-row xl:flex-col" },
+        _vm._l(_vm.relatedMovies, function(movie) {
+          return _c(
+            "div",
+            { staticClass: "mini-movie mt-6 lg:w-1/4 xl:w-auto" },
+            [
+              _c("div", { staticClass: "flex" }, [
+                _c("div", {}, [
+                  _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
+                    _c("img", {
+                      staticClass: "hover:opacity-75 small-poster",
+                      attrs: {
+                        src:
+                          "https://image.tmdb.org/t/p/w92" + movie.poster_path,
+                        alt: movie.original_title + " poster"
+                      }
+                    })
+                  ])
                 ]),
                 _vm._v(" "),
                 _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-500"
-                  },
-                  [_vm._v(_vm._s(movie.genres))]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 text-gray-400"
-                  },
-                  [_vm._v(_vm._s(movie.release_date))]
+                  "div",
+                  { staticClass: "movie-info ml-4" },
+                  [
+                    _c("a", { attrs: { href: "/movie/show/" + movie.id } }, [
+                      _c(
+                        "h3",
+                        {
+                          staticClass:
+                            "text-xl md:text-4xl lg:text-xl hover:underline"
+                        },
+                        [_vm._v(_vm._s(movie.original_title))]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-500"
+                      },
+                      [_vm._v(_vm._s(movie.genres))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 text-gray-400"
+                      },
+                      [_vm._v(_vm._s(movie.release_date))]
+                    ),
+                    _vm._v(" "),
+                    _c("rating", {
+                      staticClass: "mt-1",
+                      attrs: {
+                        size: "w-8 h-8",
+                        "rating-percent": movie.vote_average * 10
+                      }
+                    })
+                  ],
+                  1
                 )
               ])
-            ])
-          ]
-        )
-      }),
-      0
-    )
-  ])
+            ]
+          )
+        }),
+        0
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

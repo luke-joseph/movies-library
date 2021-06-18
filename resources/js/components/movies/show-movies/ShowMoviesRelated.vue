@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-full xl:w-1/4 xl:pl-10 mt-16 xl:mt-0">
+    <div class="w-full xl:w-1/4 xl:ml-10 mt-16 xl:mt-0 sm:bg-gray-50 xl:px-10 xl:py-10 xl:-mt-10 rounded">
 
       <h2 v-if="relatedMovies.length" class="text-3xl font-semibold text-gray-400 mb-8">Related Movies</h2>
 
@@ -33,6 +33,8 @@
               <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-1 lg:mt-1 text-gray-500">{{ movie.genres }}</p>
 
               <p class="text-sm md:text-lg lg:text-sm mt-1 md:mt-2 lg:mt-1 text-gray-400">{{ movie.release_date }}</p>
+
+              <rating class="mt-1" size="w-8 h-8" :rating-percent="movie.vote_average * 10"/>
 
             </div>
 

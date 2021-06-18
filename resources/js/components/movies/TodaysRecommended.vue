@@ -36,11 +36,13 @@
 
         <p class="text-sm mt-1 text-gray-600">{{ movie.genres }}</p>
 
-        <p class="mt-1 tracking-wide font-semibold text-gray-400">{{ (movie.vote_average * 10) + '%' }} | Released {{ movie.release_date }}</p>
+        <p class="mt-1 tracking-wide font-semibold text-gray-400">Released {{ movie.release_date }}</p>
 
         <p class="mt-4 text-gray-700">
           {{ movie.overview }}
         </p>
+
+        <rating class="mt-4" :rating-percent="movie.vote_average * 10"/>
 
       </div>
 

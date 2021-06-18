@@ -12,9 +12,12 @@
       </div>
 
       {{-- footer --}}
-      <div class="flex h-16 bg-gray-300 mt-auto px-6 sm:px-0">
-        <div class="my-auto container mx-auto">
-          <p class="">Made with the <a class="text-indigo-900" href="https://www.themoviedb.org/">TMDB API</a></p>
+      <div class="flex bg-gray-800 mt-auto px-6 sm:px-0">
+        <div class="my-auto container mx-auto text-gray-400">
+          <div class="flex flex-col sm:flex-row justify-between py-4 text-sm">
+            <p>Website by <a style="color: #fff" class="text-orange-400 underline" href="https://lukejoseph.dev/">Luke Joseph</a>.</p>
+            <p class="mt-2 sm:mt-0">Content from <a style="color: #fff" class="text-orange-400 underline" href="https://www.themoviedb.org/">themoviedb API</a></p>
+          </div>
         </div>
       </div>
       <script src="{{ mix('/js/app.js')}}"></script>

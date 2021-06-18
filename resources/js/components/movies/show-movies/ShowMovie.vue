@@ -37,7 +37,7 @@
       </div>
 
       <!-- Cast -->
-      <div class="mt-20 sm:mt-16 sm:mb-20">
+      <div class="mt-20 sm:mt-16">
         <h4 class="text-2xl sm:text-4xl mb-6 text-gray-400">Cast</h4>
         <div class="flex w-full grid grid-flow-col grid-cols-3 grid-rows-2 sm:grid-cols-6 sm:grid-rows-1 gap-4">
 

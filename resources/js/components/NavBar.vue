@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <!-- large devices -->
-    <nav class="hidden lg:block w-full bg-gray-300 px-6">
+    <nav class="hidden lg:block w-full bg-gray-100 px-6">
 
       <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
 
@@ -16,7 +16,7 @@
 
             <div class="w-full mb-2 sm:mb-0 uppercase font-medium sm:flex text-sm md:text-lg lg:text-sm ml-auto">
 
-              <div class="flex w-full rounded bg-white border border-gray-300 shadow-inner">
+              <div class="flex w-full rounded-full bg-white border border-gray-300 shadow-inner">
 
                 <input class="w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none" @keydown.enter="searchMovies"
                 type="text" name="movie_search" v-model="searchQuery" value="" placeholder="Search Movies...">
@@ -38,23 +38,23 @@
     </nav>
 
     <!-- small devices -->
-    <nav class="lg:hidden w-full bg-gray-900 px-6 lg:px-0">
+    <nav class="lg:hidden w-full bg-gray-100 px-6 lg:px-0">
 
       <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
 
           <div class="flex flex-col w-full text-lg py-4">
 
             <div class="flex justify-between items-center">
-              <a href="/" class="text-white">Movies DB</a>
+              <a href="/" class="text-gray-500 font-bold">Movies DB</a>
               <div class="">
                   <svg v-show="!showDropDown" @click="showDropDown = true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 icon-menu">
-                    <path class="secondary" style="fill: white;" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                    <path class="secondary" style="fill: #6B7280;" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
                     </path>
                   </svg>
 
                 <svg v-show="showDropDown" @click="showDropDown = false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 icon-close-circle">
                   <circle cx="12" cy="12" r="10" class="primary" style="fill: none;"></circle>
-                  <path class="secondary" style="fill: white;" d="M13.41 12l2.83 2.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 1 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12z"></path>
+                  <path class="secondary" style="fill: #6B7280;" d="M13.41 12l2.83 2.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 1 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12z"></path>
                 </svg>
 
               </div>
@@ -62,7 +62,7 @@
             </div>
 
               <div v-if="showDropDown" class="flex flex-col">
-                <a href="/" class="text-white mt-2 mb-4">Movies</a>
+                <a href="/" class="text-gray-500 mt-2 mb-4">Movies</a>
 
                 <!-- search input -->
                 <div class="w-full">
