@@ -2482,6 +2482,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     movie: {
@@ -22073,13 +22077,29 @@ var render = function() {
         },
         _vm._l(_vm.cast, function(actor) {
           return _c("div", { staticClass: "flex flex-col" }, [
-            _c("img", {
-              staticClass: "w-4/5 sm:w-auto rounded object-contain object-top",
-              attrs: {
-                src: "https://image.tmdb.org/t/p/original" + actor.profile_path,
-                alt: actor.original_name + " profile picture"
-              }
-            }),
+            actor.profile_path
+              ? _c("img", {
+                  staticClass:
+                    "w-4/5 sm:w-auto rounded object-contain object-top",
+                  attrs: {
+                    src:
+                      "https://image.tmdb.org/t/p/original" +
+                      actor.profile_path,
+                    alt: actor.original_name + " profile picture"
+                  }
+                })
+              : _c(
+                  "div",
+                  {
+                    staticClass:
+                      "w-4/5 flex sm:w-auto rounded object-contain object-top bg-gray-700 h-full"
+                  },
+                  [
+                    _c("p", { staticClass: "m-auto text-gray-200" }, [
+                      _vm._v("No Image Found")
+                    ])
+                  ]
+                ),
             _vm._v(" "),
             _c("h4", { staticClass: "mt-2 text-lg" }, [
               _vm._v(_vm._s(actor.original_name))

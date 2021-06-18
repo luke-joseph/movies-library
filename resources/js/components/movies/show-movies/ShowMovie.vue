@@ -43,9 +43,13 @@
 
           <div v-for="actor in cast" class="flex flex-col">
 
-            <img :src="'https://image.tmdb.org/t/p/original' + actor.profile_path"
+            <img v-if="actor.profile_path" :src="'https://image.tmdb.org/t/p/original' + actor.profile_path"
             :alt="actor.original_name + ' profile picture'"
             class="w-4/5 sm:w-auto rounded object-contain object-top">
+
+            <div v-else class="w-4/5 flex sm:w-auto rounded object-contain object-top bg-gray-700 h-full">
+              <p class="m-auto text-gray-200">No Image Found</p>
+            </div>
 
             <h4 class="mt-2 text-lg">{{ actor.original_name }}</h4>
 
