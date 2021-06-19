@@ -2498,6 +2498,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     movie: {
@@ -21580,7 +21581,7 @@ var render = function() {
                   }
                 })
               : _c("img", {
-                  staticClass: "cursor-pointer w-1/2 sm:w-auto",
+                  staticClass: "cursor-pointer w-1/2 sm:w-auto h-64 sm:h-auto",
                   attrs: {
                     src:
                       "https://via.placeholder.com/" +
@@ -21621,7 +21622,9 @@ var render = function() {
                   _vm._v(_vm._s(result.genres))
                 ]),
                 _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(result.release_date))]),
+                _c("p", { staticClass: "mt-1" }, [
+                  _vm._v(_vm._s(result.release_date))
+                ]),
                 _vm._v(" "),
                 _c("p"),
                 _vm._v(" "),
@@ -21643,7 +21646,7 @@ var render = function() {
                   : _c("p", { staticClass: "mt-4 text-gray-300 text-lg h-12" }),
                 _vm._v(" "),
                 _c("rating", {
-                  staticClass: "mt-4",
+                  staticClass: "mt-1 sm:mt-4",
                   attrs: { "rating-percent": result.vote_average * 10 }
                 })
               ],
@@ -22064,9 +22067,9 @@ var render = function() {
               }
             })
           : _c("img", {
-              staticClass: "rounded object-contain object-top",
+              staticClass: "w-4/5 sm:w-auto rounded object-contain object-top",
               attrs: {
-                src: "https://via.placeholder.com/342",
+                src: "https://via.placeholder.com/248x342",
                 alt: _vm.movie.original_title + " no poster found"
               }
             }),
@@ -22122,9 +22125,11 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "mt-20 sm:mt-16" }, [
-      _c("h4", { staticClass: "text-2xl sm:text-4xl mb-6 text-gray-400" }, [
-        _vm._v("Cast")
-      ]),
+      _vm.cast.length
+        ? _c("h4", { staticClass: "text-2xl sm:text-4xl mb-6 text-gray-400" }, [
+            _vm._v("Cast")
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "div",

@@ -23,7 +23,7 @@
 
         <img @click="showMovie(result.id)" v-else
         :src="'https://via.placeholder.com/' + imageWidth.slice(1) + 'x278'"
-        class="cursor-pointer w-1/2 sm:w-auto"
+        class="cursor-pointer w-1/2 sm:w-auto h-64 sm:h-auto"
         :alt="result.original_title + ' no poster found'">
 
         <!-- Supporting Info -->
@@ -39,7 +39,7 @@
 
             <p class="text-gray-700">{{ result.genres }}</p>
 
-            <p>{{ result.release_date }}</p>
+            <p class="mt-1">{{ result.release_date }}</p>
 
           </p>
 
@@ -50,7 +50,7 @@
 
           <p v-else class="mt-4 text-gray-300 text-lg h-12"></p>
 
-          <rating class="mt-4" :rating-percent="result.vote_average * 10"/>
+          <rating class="mt-1 sm:mt-4" :rating-percent="result.vote_average * 10"/>
 
         </div>
 
