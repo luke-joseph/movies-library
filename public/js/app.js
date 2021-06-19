@@ -1981,39 +1981,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      searchQuery: '',
-      showDropDown: false
+      searchQuery: ''
     };
   },
   methods: {
@@ -21357,197 +21328,74 @@ var render = function() {
         [
           _c("div", { staticClass: "flex flex-col w-full text-lg py-4" }, [
             _c("div", { staticClass: "flex justify-between items-center" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "text-gray-500 font-bold",
-                  attrs: { href: "/" }
-                },
-                [_vm._v("Movies DB")]
-              ),
+              _vm._m(1),
               _vm._v(" "),
-              _c("div", {}, [
-                _c(
-                  "svg",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.showDropDown,
-                        expression: "!showDropDown"
-                      }
-                    ],
-                    staticClass: "w-8 icon-menu",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 24 24"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.showDropDown = true
-                      }
+              _c("div", { staticClass: "flex w-48 rounded-full bg-white" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.searchQuery,
+                      expression: "searchQuery"
                     }
+                  ],
+                  staticClass:
+                    "w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none",
+                  attrs: {
+                    type: "text",
+                    name: "movie_search",
+                    value: "",
+                    placeholder: "Search Movies..."
                   },
-                  [
-                    _c("path", {
-                      staticClass: "secondary",
-                      staticStyle: { fill: "#6B7280" },
-                      attrs: {
-                        "fill-rule": "evenodd",
-                        d:
-                          "M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                  domProps: { value: _vm.searchQuery },
+                  on: {
+                    keydown: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
                       }
-                    })
-                  ]
-                ),
+                      return _vm.searchMovies.apply(null, arguments)
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.searchQuery = $event.target.value
+                    }
+                  }
+                }),
                 _vm._v(" "),
                 _c(
                   "svg",
                   {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.showDropDown,
-                        expression: "showDropDown"
-                      }
-                    ],
-                    staticClass: "w-10 icon-close-circle",
+                    staticClass:
+                      "cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search",
                     attrs: {
                       xmlns: "http://www.w3.org/2000/svg",
                       viewBox: "0 0 24 24"
                     },
-                    on: {
-                      click: function($event) {
-                        _vm.showDropDown = false
-                      }
-                    }
+                    on: { click: _vm.searchMovies }
                   },
                   [
                     _c("circle", {
-                      staticClass: "primary",
-                      staticStyle: { fill: "none" },
-                      attrs: { cx: "12", cy: "12", r: "10" }
+                      staticStyle: { fill: "#F7F5F5" },
+                      attrs: { cx: "10", cy: "10", r: "7" }
                     }),
                     _vm._v(" "),
                     _c("path", {
-                      staticClass: "secondary",
-                      staticStyle: { fill: "#6B7280" },
+                      staticStyle: { fill: "#A6A9AB" },
                       attrs: {
                         d:
-                          "M13.41 12l2.83 2.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 1 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12z"
+                          "M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
                       }
                     })
                   ]
                 )
               ])
-            ]),
-            _vm._v(" "),
-            _vm.showDropDown
-              ? _c("div", { staticClass: "flex flex-col" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "text-gray-500 mt-2 mb-4",
-                      attrs: { href: "/" }
-                    },
-                    [_vm._v("Movies")]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "w-full" }, [
-                    _c("div", { staticClass: "search" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "w-5/6 md:w-1/2 mb-2 uppercase font-medium text-sm md:text-lg mr-auto"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "flex w-full rounded bg-white" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.searchQuery,
-                                    expression: "searchQuery"
-                                  }
-                                ],
-                                staticClass:
-                                  "w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none",
-                                attrs: {
-                                  type: "text",
-                                  name: "movie_search",
-                                  value: "",
-                                  placeholder: "Search Movies..."
-                                },
-                                domProps: { value: _vm.searchQuery },
-                                on: {
-                                  keydown: function($event) {
-                                    if (
-                                      !$event.type.indexOf("key") &&
-                                      _vm._k(
-                                        $event.keyCode,
-                                        "enter",
-                                        13,
-                                        $event.key,
-                                        "Enter"
-                                      )
-                                    ) {
-                                      return null
-                                    }
-                                    return _vm.searchMovies.apply(
-                                      null,
-                                      arguments
-                                    )
-                                  },
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.searchQuery = $event.target.value
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "svg",
-                                {
-                                  staticClass:
-                                    "cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search",
-                                  attrs: {
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    viewBox: "0 0 24 24"
-                                  },
-                                  on: { click: _vm.searchMovies }
-                                },
-                                [
-                                  _c("circle", {
-                                    staticStyle: { fill: "#F7F5F5" },
-                                    attrs: { cx: "10", cy: "10", r: "7" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("path", {
-                                    staticStyle: { fill: "#A6A9AB" },
-                                    attrs: {
-                                      d:
-                                        "M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
-                                    }
-                                  })
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              : _vm._e()
+            ])
           ])
         ]
       )
@@ -21567,11 +21415,7 @@ var staticRenderFns = [
       [
         _c(
           "a",
-          {
-            staticClass:
-              "text-gray-500 font-bold mt-1 sm:mt-0 hover:text-gray-700",
-            attrs: { href: "/" }
-          },
+          { staticClass: "text-gray-500 mt-1 sm:mt-0", attrs: { href: "/" } },
           [
             _c("img", {
               staticClass: "w-40",
@@ -21579,6 +21423,21 @@ var staticRenderFns = [
             })
           ]
         )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "text-gray-500 font-bold", attrs: { href: "/" } },
+      [
+        _c("img", {
+          staticClass: "w-32",
+          attrs: { src: "/img/moviesdb-logo.png", alt: "moviesdb logo" }
+        })
       ]
     )
   }

@@ -6,7 +6,7 @@
       <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
 
           <div class="flex flex-col sm:flex-row items-center lg:w-3/4 text-lg">
-            <a href="/" class="text-gray-500 font-bold mt-1 sm:mt-0 hover:text-gray-700">
+            <a href="/" class="text-gray-500 mt-1 sm:mt-0">
               <img src="/img/moviesdb-logo.png" alt="moviesdb logo" class="w-40">
             </a>
           </div>
@@ -47,51 +47,23 @@
           <div class="flex flex-col w-full text-lg py-4">
 
             <div class="flex justify-between items-center">
-              <a href="/" class="text-gray-500 font-bold">Movies DB</a>
-              <div class="">
-                  <svg v-show="!showDropDown" @click="showDropDown = true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 icon-menu">
-                    <path class="secondary" style="fill: #6B7280;" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
-                    </path>
-                  </svg>
+              <a href="/" class="text-gray-500 font-bold">
+                <img src="/img/moviesdb-logo.png" alt="moviesdb logo" class="w-32">
+              </a>
 
-                <svg v-show="showDropDown" @click="showDropDown = false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 icon-close-circle">
-                  <circle cx="12" cy="12" r="10" class="primary" style="fill: none;"></circle>
-                  <path class="secondary" style="fill: #6B7280;" d="M13.41 12l2.83 2.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 1 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12z"></path>
-                </svg>
+                  <div class="flex w-48 rounded-full bg-white">
 
-              </div>
+                    <input class="w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none" @keydown.enter="searchMovies"
+                    type="text" name="movie_search" v-model="searchQuery" value="" placeholder="Search Movies...">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" @click="searchMovies" viewBox="0 0 24 24" class="cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search">
+                      <circle cx="10" cy="10" r="7" style="fill: #F7F5F5;"/>
+                      <path style="fill: #A6A9AB;" d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+                    </svg>
+
+                  </div>
 
             </div>
-
-              <div v-if="showDropDown" class="flex flex-col">
-                <a href="/" class="text-gray-500 mt-2 mb-4">Movies</a>
-
-                <!-- search input -->
-                <div class="w-full">
-
-                  <div class="search">
-
-                  <div class="w-5/6 md:w-1/2 mb-2 uppercase font-medium text-sm md:text-lg mr-auto">
-
-                    <div class="flex w-full rounded bg-white">
-
-                      <input class="w-full py-1 ml-3 text-gray-900 leading-snug focus:outline-none" @keydown.enter="searchMovies"
-                      type="text" name="movie_search" v-model="searchQuery" value="" placeholder="Search Movies...">
-
-                      <svg xmlns="http://www.w3.org/2000/svg" @click="searchMovies" viewBox="0 0 24 24" class="cursor-pointer w-5 md:w-6 lg:w-5 mr-3 icon-search">
-                        <circle cx="10" cy="10" r="7" style="fill: #F7F5F5;"/>
-                        <path style="fill: #A6A9AB;" d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
-                      </svg>
-
-                    </div>
-
-                  </div>
-
-                  </div>
-                </div>
-
-              </div>
-
           </div>
 
       </div>
@@ -105,8 +77,7 @@
 export default {
   data(){
     return{
-      searchQuery: '',
-      showDropDown: false
+      searchQuery: ''
     }
   },
   methods:{
