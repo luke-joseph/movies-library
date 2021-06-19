@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full xl:w-2/3 mt-8 sm:mt-16">
+  <div class="w-full xl:w-2/3 mt-8 sm:mt-16 mb-24">
 
     <h2 class="text-3xl font-bold text-gray-800 mb-8">Search Results</h2>
 
@@ -21,7 +21,9 @@
 
         <!-- Poster Doesn't Exist - Show placeholder -->
 
-        <img @click="showMovie(result.id)" v-else :src="'https://via.placeholder.com/' + imageWidth.slice(1) + 'x278'"
+        <img @click="showMovie(result.id)" v-else
+        :src="'https://via.placeholder.com/' + imageWidth.slice(1) + 'x278'"
+        class="cursor-pointer w-1/2 sm:w-auto"
         :alt="result.original_title + ' no poster found'">
 
         <!-- Supporting Info -->
@@ -73,7 +75,7 @@ export default {
   },
   data(){
     return{
-      imageWidth: window.width < 769 ? 'w154' : 'w185'
+      imageWidth: window.innerWidth < 769 ? 'w154' : 'w185'
     }
   },
   methods:{
