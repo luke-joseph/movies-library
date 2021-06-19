@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
-  .small-poster{
-    min-width: 92px;
-  }
+h1, h2, h3, h4, h5{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.small-poster{
+  min-width: 92px;
+}
 
 /* medium devices only */
 @media only screen and (min-width: 639px) and (max-width: 1023px){

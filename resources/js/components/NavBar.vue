@@ -6,7 +6,9 @@
       <div class="nav-items flex flex-col sm:flex-row container mx-auto h-full justify-between">
 
           <div class="flex flex-col sm:flex-row items-center lg:w-3/4 text-lg">
-            <a href="/" class="text-gray-500 font-bold mt-1 sm:mt-0 hover:text-gray-700">MoviesDB </a>
+            <a href="/" class="text-gray-500 font-bold mt-1 sm:mt-0 hover:text-gray-700">
+              <img src="/img/moviesdb-logo.png" alt="moviesdb logo" class="w-40">
+            </a>
           </div>
 
           <!-- search input -->

@@ -3,7 +3,7 @@
 
     <div class="lg:w-3/4 lg:ml-auto h-full">
 
-      <h2 class="text-3xl font-bold text-gray-800 mb-12 sm:mb-8">Upcoming Movies</h2>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-12 sm:mb-8">Upcoming Movies</h2>
 
       <!-- Mini movie poster & info -->
       <div v-for="movie in upcomingMovies" class="mini-movie mt-6">

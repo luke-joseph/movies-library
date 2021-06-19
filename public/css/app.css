@@ -31831,6 +31831,14 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Montserrat', sans-serif;
+}
+
 .small-poster{
   min-width: 92px;
 }

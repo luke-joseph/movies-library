@@ -1,7 +1,7 @@
 <template>
   <div class="w-full lg:w-2/3">
 
-    <h2 class="text-3xl font-bold text-gray-800">Today's Recommended Movies</h2>
+    <h2 class="text-3xl font-semibold text-gray-800">Today's Recommended Movies</h2>
 
     <!-- Recommended Movie Card -->
     <div v-for="movie in topRatedMovies" class="recommended-movie-container mt-8 flex flex-col sm:flex-row sm:p-6 rounded">

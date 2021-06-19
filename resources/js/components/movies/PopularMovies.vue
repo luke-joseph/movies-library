@@ -1,7 +1,7 @@
 <template>
   <div class="mt-8 sm:mt-16">
 
-    <h2 class="text-3xl font-bold text-gray-800 leading-tight">Popular Movies</h2>
+    <h2 class="text-3xl font-semibold text-gray-800 leading-tight">Popular Movies</h2>
 
     <div class="movie-poster-container mt-12 grid sm:grid-flow-col grid-cols-1 grid-rows-8 sm:grid-cols-2 sm:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-x-4 gap-y-16">
 
@@ -19,7 +19,7 @@
 
           <a :href="'/movie/show/' + movie.id">
 
-            <h3 class="text-4xl sm:text-3xl mt-1 sm:tracking-wider hover:underline text-gray-900 ml-2">
+            <h3 class="text-4xl sm:text-3xl mt-1 hover:underline text-gray-900 ml-2">
               {{ movie.original_title }}
             </h3>
 

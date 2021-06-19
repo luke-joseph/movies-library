@@ -2007,6 +2007,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -21570,7 +21572,12 @@ var staticRenderFns = [
               "text-gray-500 font-bold mt-1 sm:mt-0 hover:text-gray-700",
             attrs: { href: "/" }
           },
-          [_vm._v("MoviesDB ")]
+          [
+            _c("img", {
+              staticClass: "w-40",
+              attrs: { src: "/img/moviesdb-logo.png", alt: "moviesdb logo" }
+            })
+          ]
         )
       ]
     )
@@ -21867,7 +21874,7 @@ var render = function() {
   return _c("div", { staticClass: "mt-8 sm:mt-16" }, [
     _c(
       "h2",
-      { staticClass: "text-3xl font-bold text-gray-800 leading-tight" },
+      { staticClass: "text-3xl font-semibold text-gray-800 leading-tight" },
       [_vm._v("Popular Movies")]
     ),
     _vm._v(" "),
@@ -21902,7 +21909,7 @@ var render = function() {
                 "h3",
                 {
                   staticClass:
-                    "text-4xl sm:text-3xl mt-1 sm:tracking-wider hover:underline text-gray-900 ml-2"
+                    "text-4xl sm:text-3xl mt-1 hover:underline text-gray-900 ml-2"
                 },
                 [
                   _vm._v(
@@ -21970,7 +21977,7 @@ var render = function() {
     "div",
     { staticClass: "w-full lg:w-2/3" },
     [
-      _c("h2", { staticClass: "text-3xl font-bold text-gray-800" }, [
+      _c("h2", { staticClass: "text-3xl font-semibold text-gray-800" }, [
         _vm._v("Today's Recommended Movies")
       ]),
       _vm._v(" "),
@@ -22098,7 +22105,7 @@ var render = function() {
       [
         _c(
           "h2",
-          { staticClass: "text-3xl font-bold text-gray-800 mb-12 sm:mb-8" },
+          { staticClass: "text-3xl font-semibold text-gray-800 mb-12 sm:mb-8" },
           [_vm._v("Upcoming Movies")]
         ),
         _vm._v(" "),
