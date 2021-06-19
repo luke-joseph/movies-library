@@ -8,10 +8,10 @@ This project was built as a portfolio / just for fun project. The project contai
 
 This project was built using:
 
+- PHP / Laravel / Blade templating engine.
+- Vue.js
+- tailwindcss
 - [themoviedb API](https://www.themoviedb.org/).
-- PHP / Laravel for the api calls, data organisation and blade templates.
-- Vue for components, reactivity and features.
-- tailwindcss for modern and responsive design.
 
 The demo version can be found [here](https://moviesdb.lukejoseph.dev)
 
@@ -21,7 +21,7 @@ The demo version can be found [here](https://moviesdb.lukejoseph.dev)
 - Generate a app key using php artisan key:generate
 - Copy the .env.example to .env
 - Create an account / request an api key from [themoviedb API](https://www.themoviedb.org/)
-- Enter the api key into the TMDB_API_KEY=
+- Enter the api key in the env file TMDB_API_KEY=YOUR_API_KEY
 - Serve the application with php artisan serve
 
 Find a new movie to watch.
