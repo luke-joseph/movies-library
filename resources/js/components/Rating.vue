@@ -1,7 +1,10 @@
 <template>
   <div class="flex-wrapper">
 
-    <div class="single-chart justify-around z-50" :class="size">
+    <div v-if="formattedRating"
+        class="single-chart justify-around z-50"
+        :class="size"
+    >
 
       <svg viewBox="0 0 36 36" class="circular-chart green block ">
         <path class="circle-bg"
@@ -16,7 +19,7 @@
             a 15.9155 15.9155 0 0 1 0 -31.831"
         />
         <text x="18" y="20.35" class="percentage fill-current text-white font-bold tracking-wide">
-          {{ ratingPercent }}%
+          {{ formattedRating }}%
         </text>
       </svg>
 
@@ -37,7 +40,12 @@ export default {
       default: 'w-12 h-12',
       required: false
     }
-  }
+  },
+    computed:{
+      formattedRating: function() {
+          return Math.round(this.ratingPercent)
+      }
+    }
 }
 </script>
 

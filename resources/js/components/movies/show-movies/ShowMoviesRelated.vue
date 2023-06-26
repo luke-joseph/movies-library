@@ -11,12 +11,21 @@
 
           <div class="flex">
 
-            <div class="">
+            <div>
 
               <a :href="'/movie/show/' + movie.id">
 
-                <img :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
-                :alt="movie.original_title + ' poster'" class="hover:opacity-75 small-poster">
+                  <img v-if="movie.poster_path"
+                       :src="'https://image.tmdb.org/t/p/w92' + movie.poster_path"
+                       :alt="movie.original_title + ' poster'"
+                       class="hover:opacity-75 small-poster"
+                  >
+
+                  <img  v-else
+                       :src="'https://via.placeholder.com/' + '92x138'"
+                       class="hover:opacity-75 small-poster"
+                       :alt="movie.original_title + ' no poster found'"
+                  >
 
               </a>
 
